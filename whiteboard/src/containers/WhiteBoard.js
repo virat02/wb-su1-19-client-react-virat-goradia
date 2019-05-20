@@ -2,87 +2,37 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import CourseTable from './CourseTable';
 import CourseGrid from './CourseGrid';
-
-let courses = [
-    {
-        "id": "123",
-        "title": "CS5610",
-        "modules": [
-            {
-                "title": "Week 1",
-                "lessons": [
-                    {
-                        "title": "HTML",
-                        "topics": [
-                            {
-                                "title": "DOM",
-                                "widgets": [
-                                    {
-                                        "type": "HEADING",
-                                        "size": 1,
-                                        "text": "The Document Object Model"
-                                    },
-                                    {
-                                        "type": "PARAGRAPH",
-                                        "text": "This topic introduces the DOM"
-                                    },
-                                    {
-                                        "type": "LIST",
-                                        "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
-                                    },
-                                    {
-                                        "type": "IMAGE",
-                                        "src": "https://picsum.photos/200"
-                                    },
-                                    {
-                                        "type": "LINK",
-                                        "title": "The DOM",
-                                        "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
-                                    }
-                                ]
-                            },
-                            {
-                                "title": "Tags",
-                                "widgets": []
-                            },
-                            {
-                                "title": "Attributes",
-                                "widgets": []
-                            }
-                        ]
-                    },
-                    {
-                        "title": "CSS",
-                        "topics": []
-                    }
-                ]
-            },
-            {
-                "title": "Week 2",
-                "lessons": []
-            }
-        ]
-    },
-    {
-        "id": "234",
-        "title": "CS5200",
-        "modules": []
-    }
-];
+import courses from '../input/courses';
+import CourseService from '../services/course-service';
+import NavBar from "../components/NavBar";
 
 export default class WhiteBoard extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.courseService = new CourseService();
+        this.courses = this.courseService.findAllCourses();
+        this.state = {
+            selectedCourse: courses[0]
+        }
+    };
+
+    selectCourse = course =>
+        this.setState({selectedCourse: course});
 
     render() {
         return (
             <Router>
-                <div>
+                <NavBar />
+                <div className="container-fluid">
                     <Link to="/course/table">Table</Link>
-                    | <Link to="/course/grid">Grid</Link>
+                    <Link to="/course/grid">Grid</Link>
                     <Route path="/course/table"
-                           render={() => <CourseTable courses={courses}/>}/>
+                           render={() => <CourseTable courses={this.courses}/>}/>
                     <Route path="/course/grid"
-                           render={() => <CourseGrid courses={courses}/>}/>
+                           render={() => <CourseGrid courses={this.courses}/>}/>
                 </div>
+
             </Router>
         );
     }

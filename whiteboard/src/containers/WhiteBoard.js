@@ -1,10 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import CourseTable from './CourseTable';
-import CourseGrid from './CourseGrid';
+import {BrowserRouter as Router} from 'react-router-dom';
 import courses from '../input/courses';
 import CourseService from '../services/course-service';
 import NavBar from "../components/NavBar";
+import SwitchToggle from "../components/SwitchToggle";
 
 export default class WhiteBoard extends React.Component {
 
@@ -24,14 +23,7 @@ export default class WhiteBoard extends React.Component {
         return (
             <Router>
                 <NavBar />
-                <div className="container-fluid">
-                    <Link to="/course/table">Table</Link>
-                    <Link to="/course/grid">Grid</Link>
-                    <Route path="/course/table"
-                           render={() => <CourseTable courses={this.courses}/>}/>
-                    <Route path="/course/grid"
-                           render={() => <CourseGrid courses={this.courses}/>}/>
-                </div>
+                <SwitchToggle/>
 
             </Router>
         );

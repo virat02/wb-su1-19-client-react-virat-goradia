@@ -2,10 +2,10 @@ import React from 'react';
 import CourseCard from '../components/CourseCard';
 
 const CourseGrid =({courses,selectCourse}) =>
-    <div className="card-deck">
+    <div className="row card-deck">
         {
             courses.map((course, key) =>
-                <CourseCard
+                <CourseCard className="col-2"
                     course={course}
                     key={key}/>)}
     </div>;

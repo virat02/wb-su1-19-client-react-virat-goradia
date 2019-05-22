@@ -1,5 +1,6 @@
 import React from 'react';
 import './SwitchToggle.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import CourseTable from "../containers/CourseTable";
 import CourseGrid from "../containers/CourseGrid";
 import CourseService from "../services/course-service";
@@ -8,8 +9,8 @@ export default class SwitchToggle extends React.Component {
     constructor(props) {
         super(props);
         this.courseService = new CourseService();
-        this.courses = this.courseService.findAllCourses();
         this.state = {
+            courses: this.courseService.findAllCourses(),
             isChecked: props.isChecked || false,
         };
 
@@ -22,15 +23,24 @@ export default class SwitchToggle extends React.Component {
 
     render() {
         return (
-            <div>
-                <label className="switch">
-                    <input type="checkbox" value={this.state.isChecked} onChange={this.handleChange}/>
-                    <span className = "slider round"/>
-                </label>
-                {   this.state.isChecked ?
-                    <CourseGrid courses={this.courses}/> : <CourseTable courses={this.courses}/>
-                }
-            </div>
+            <Router>
+                <div>
+                    <label className="switch">
+                        <input type="checkbox" value={this.state.isChecked} onChange={this.handleChange}/>
+                        <span className = "slider round"/>
+                    </label>
+                    {   this.state.isChecked ?
+                        <CourseGrid
+                            selectCourse={this.props.selectCourse}
+                            courses={this.state.courses}/>
+                            :
+                        <CourseTable
+                            selectCourse={this.props.selectCourse}
+                            courses={this.state.courses}/>
+                    }
+                </div>
+
+            </Router>
         );
     }
 }

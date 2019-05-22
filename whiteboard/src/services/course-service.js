@@ -24,8 +24,6 @@ export default class CourseService {
 
         //Append the course to the courses object
         this.courses.push(course);
-
-        return this.courses
     };
 
     //retrieves all course instances as an array of courses
@@ -34,14 +32,14 @@ export default class CourseService {
 
     //retrieves a course instance that matches the id parameter
     findCourseById = courseId =>
-        this.courses = this.courses.find(
+        this.courses.find(
             course => course.id === courseId
         );
 
     //updates the course instance whose id matches the id parameter.
     //Updates the instance with values in course parameter
     updateCourse = (id, course) =>
-        this.courses = this.courses.map(
+        this.courses.map(
             currentCourse => currentCourse.id === id ? course : currentCourse
         );
 

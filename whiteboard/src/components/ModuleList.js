@@ -43,7 +43,7 @@ export default class ModuleList extends React.Component {
             <div>
                 <nav className="navbar navbar-expand-lg">
                     <a href="/"><i className='fa fa-times'/></a>
-                    <a className="navbar-brand col-3" ><b>{this.props.course.title}</b></a>
+                    <a className="navbar-brand col-3 float-right" ><b>{this.props.course.title}</b></a>
                 </nav>
 
                 <ul className="list-group">
@@ -52,8 +52,8 @@ export default class ModuleList extends React.Component {
                             module =>
                                 <ModuleListItem
                                     deleteModule={this.deleteModule}
+                                    selectModule = {this.props.selectModule}
                                     module={module}
-                                    courseId = {this.props.course.id}
                                     key={module.id}/>
                         )
                     }

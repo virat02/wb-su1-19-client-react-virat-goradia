@@ -1,6 +1,6 @@
 import React from 'react'
 import ModuleList from './ModuleList';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import LessonTabs from './LessonTabs';
 import TopicPills from './TopicPills';
 import CourseService from "../services/course-service";
@@ -32,19 +32,20 @@ export default class CourseEditor extends React.Component {
             }
         );
 
-    render() { 
+    render() {
 
         return (
             <Router>
                 <div className="row">
 
-                    <div className="col-4 left">
+                    <div className="col-3 left">
                         <ModuleList
                             modules={this.state.course.modules}
+                            selectedModule={this.state.module}
                             course = {this.state.course}
                             selectModule = {this.selectModule}/>
                     </div>
-                    <div className="col-8 right">
+                    <div className="col-9 right">
                         <LessonTabs lessons={this.state.module.lessons} />
                         <br />
                         <TopicPills topics={this.state.topic} />

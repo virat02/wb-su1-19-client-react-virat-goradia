@@ -8,7 +8,17 @@ export default class ModuleList extends React.Component {
         this.state = {
             module: {
                 id: -1,
-                title: 'New Module'
+                title: 'New Module',
+                lessons: [
+                    {
+                        title: 'New Lesson',
+                        topics: [
+                            {
+                                title : 'New Title'
+                            }
+                        ]
+                    }
+                ]
             },
             modules: this.props.modules
         };
@@ -17,6 +27,7 @@ export default class ModuleList extends React.Component {
     createModule = () => {
 
         this.state.module.id = (new Date()).getTime();
+
 
         this.setState({
             modules: [...this.state.modules, this.state.module ]
@@ -29,13 +40,28 @@ export default class ModuleList extends React.Component {
         })
     };
 
+    // editModule = id => {
+    //     this.state.module.title =
+    //
+    // }
+
     titleChanged = (event) => {
         this.setState({
             module: {
                 title: event.target.value,
-                id: (new Date()).getTime()
+                id: (new Date()).getTime(),
+                lessons: [
+                    {
+                        title: 'New Lesson',
+                        topics: [
+                            {
+                                title : 'New Title'
+                            }
+                        ]
+                    }
+                ]
             }
-        })
+        });
     };
 
     render() {
@@ -53,6 +79,7 @@ export default class ModuleList extends React.Component {
                                 <ModuleListItem
                                     deleteModule={this.deleteModule}
                                     selectModule = {this.props.selectModule}
+                                    selectedModule = {this.props.selectedModule}
                                     module={module}
                                     key={module.id}/>
                         )

@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Link, Route} from 'react-router-dom';
-import CourseEditor from "./CourseEditor";
+import {BrowserRouter as Link} from 'react-router-dom';
 
 const CourseCard = ({course, selectCourse}) =>
 

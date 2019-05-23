@@ -24,7 +24,8 @@ export default class CourseEditor extends React.Component {
 
                 <div className="col-3">
                     <ModuleList
-                        modules={this.state.course.modules}/>
+                        modules={this.state.course.modules}
+                        course = {this.state.course}/>
                 </div>
             </div>
         );

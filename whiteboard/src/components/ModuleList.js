@@ -11,10 +11,11 @@ export default class ModuleList extends React.Component {
                 title: 'New Module'
             },
             modules: this.props.modules
-        }
+        };
     }
 
     createModule = () => {
+
         this.state.module.id = (new Date()).getTime();
 
         this.setState({
@@ -23,7 +24,6 @@ export default class ModuleList extends React.Component {
     };
 
     deleteModule = (id) => {
-        console.log('deleteModule ' + id);
         this.setState({
             modules: this.state.modules.filter(module => module.id !== id)
         })
@@ -41,7 +41,11 @@ export default class ModuleList extends React.Component {
     render() {
         return(
             <div>
-                <h3>Module List</h3>
+                <nav className="navbar navbar-expand-lg">
+                    <a href="/"><i className='fa fa-times'/></a>
+                    <a className="navbar-brand col-3" ><b>{this.props.course.title}</b></a>
+                </nav>
+
                 <ul className="list-group">
                     {
                         this.state.modules.map(
@@ -49,6 +53,7 @@ export default class ModuleList extends React.Component {
                                 <ModuleListItem
                                     deleteModule={this.deleteModule}
                                     module={module}
+                                    courseId = {this.props.course.id}
                                     key={module.id}/>
                         )
                     }

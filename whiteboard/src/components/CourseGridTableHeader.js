@@ -53,6 +53,7 @@ export default class CourseGridTableHeader extends React.Component {
                                         <i className="fa fa-table" aria-hidden = "true"/>
                                     </button>
                                 </Link>
+
                         }
                     </div>
                     <div>

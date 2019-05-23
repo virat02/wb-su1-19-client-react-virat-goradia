@@ -1,16 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import CourseEditor from "./CourseEditor";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 const CourseRow = ({course, selectCourse}) =>
         <Router>
             <div className="row">
                 <div className="col-6">
-                   <Link
-                        to={`/edit/${course.id}`}>
-                        {course.title}
-                    </Link>
-
+                   <a href = {`/course/edit/${course.id}`}>
+                       {course.title}
+                   </a>
                 </div>
                 <div className="col-2">
                     {course.ownedBy}

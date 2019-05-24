@@ -7,8 +7,6 @@ export default class ModuleList extends React.Component {
         super(props);
 
         this.state = {
-            isCreateModule: false,
-            editMode: false,
             module: {
                 id: -1,
                 title: 'New Module',
@@ -26,43 +24,8 @@ export default class ModuleList extends React.Component {
             },
             modules: this.props.modules
         };
+
     }
-
-    createModule = () => {
-        this.state.module.id = (new Date()).getTime();
-
-
-        this.setState({
-            modules: [...this.state.modules, this.state.module ],
-            isCreate : false
-        })
-    };
-
-    deleteModule = (id) => {
-        this.setState({
-            modules: this.state.modules.filter(module => module.id !== id)
-        })
-    };
-
-    setCreateModule = () => {
-        this.setState( {
-            isCreateModule: true
-        });
-    };
-
-    unsetCreateModule = () => {
-        this.setState( {
-            isCreateModule: false
-        });
-    };
-
-    moduleTitleChanged = (event) => {
-        this.setState({
-            module: {
-                title: event.target.value
-            }
-        });
-    };
 
     render() {
         return(
@@ -76,36 +39,35 @@ export default class ModuleList extends React.Component {
 
                 <ul className="list-group">
                     {
-                        this.state.modules.map(
-                            module =>
+                        this.props.modules.map(
+                            (module, index) =>
                                 <ModuleListItem
-                                    deleteModule={this.deleteModule}
+                                    module={module}
+                                    key={index}
+                                    deleteModule={this.props.deleteModule}
                                     selectModule = {this.props.selectModule}
                                     selectedModule = {this.props.selectedModule}
-                                    titleChanged = {this.titleChanged}
-                                    module={module}
-                                    isEdit = {this.state.editMode}
-                                    key={module.id}/>
+                                    moduleTitleChanged = {this.props.moduleTitleChanged}/>
                         )
                     }
 
                     <li className="list-group-item">
-                        {this.state.isCreateModule ?
+                        {this.props.isCreateModule ?
                             <div>
                                 <input
-                                onChange={this.moduleTitleChanged}
-                                defaultValue={this.state.module.title}
+                                onChange={this.props.moduleTitleChanged}
+                                defaultValue="New Module"
                                 className="form-control">
                                 </input>
-                                <button onClick={this.createModule} className="btn btn-success btn-block">
+                                <button onClick={this.props.createModule} className="btn btn-success btn-block">
                                     Create
                                 </button>
-                                <button onClick={this.unsetCreateModule} className="btn btn-danger btn-block">
+                                <button onClick={this.props.unsetCreateModule} className="btn btn-danger btn-block">
                                     Cancel
                                 </button>
                             </div>
                         :
-                            <button onClick={this.setCreateModule} className="btn btn-primary btn-block">
+                            <button onClick={this.props.setCreateModule} className="btn btn-primary btn-block">
                                 <i className="fa fa-plus" aria-hidden="true"/>
                             </button>
                         }

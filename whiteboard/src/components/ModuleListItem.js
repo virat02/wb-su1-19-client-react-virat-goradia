@@ -7,31 +7,32 @@ export default class ModuleListItem extends React.Component {
         super(props);
 
         this.state = {
-            module: this.props.module,
-            isEdit: false,
+            isEditModule : false,
+            module : this.props.module,
         };
+
+        console.log(this.props.module);
     }
 
     editModule = () => {
         this.setState( {
-            isEdit : true
+            isEditModule : true
         })
     };
 
     saveModule = () => {
+
         this.setState( {
-            isEdit : false
+            isEditModule : false
         })
     };
 
-    titleChanged = (event) => {
-        this.setState(
-            {
-                module : {
-                    title: event.target.value
-                }
+    moduleListItemTitleChanged = (event) => {
+        this.setState( {
+            module: {
+                title: event.target.value
             }
-        )
+        })
     };
 
     render() {
@@ -42,9 +43,9 @@ export default class ModuleListItem extends React.Component {
                         "list-group-item active list-group-item-action" :
                         "list-group-item list-group-item-action"}
                             onClick={() => this.props.selectModule(this.props.module)}>
-                        {this.state.isEdit ?
+                        {this.state.isEditModule?
                             <input
-                                onChange={this.titleChanged}
+                                onChange={this.moduleListItemTitleChanged}
                                 defaultValue={this.state.module.title}
                                 className="form-control"/>
                             :
@@ -52,7 +53,7 @@ export default class ModuleListItem extends React.Component {
                         }
 
                         <span className="float-right">
-                            { this.state.isEdit ?
+                            { this.state.isEditModule ?
                                 <i className="fa fa-check" aria-hidden="true"
                                    onClick={this.saveModule}/>
                                 :

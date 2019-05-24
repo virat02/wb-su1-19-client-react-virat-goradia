@@ -6,77 +6,66 @@ export default class LessonTabs extends React.Component {
         super(props);
 
         this.state = {
-            isCreateLesson: false,
-            editMode: false,
-            lesson: this.props.selectedLesson
+            isEdit: false,
+            lesson: this.props.lessons[0],
         };
     }
 
-    createLesson = () => {
-        this.state.lesson.id = (new Date()).getTime();
-
-
-        this.setState({
-            lessons: this.props.lessons.push(this.state.lesson),
-            isCreateLesson : false
+    editLesson = () => {
+        this.setState( {
+            isEdit : true
         })
     };
 
-    deleteLesson = (id) => {
-        this.setState({
-            lessons: this.state.lessons.filter(lesson => lesson.id !== id)
+    saveLesson = () => {
+        this.setState( {
+            isEdit : false
         })
-    };
-
-    setCreateLesson = () => {
-        this.setState( {
-            isCreateLesson: true
-        });
-    };
-
-    unsetCreateLesson = () => {
-        this.setState( {
-            isCreateLesson: false
-        });
-    };
-
-    lessonTitleChanged = (event) => {
-        this.setState({
-            lesson: {
-                title: event.target.value
-            }
-        });
     };
 
     render() {
     return (
         <div>
             <ul className="nav nav-tabs">
-                { this.props.lessons.map((lesson, index) =>
+                {
+                    this.props.lessons.map((lesson, index) =>
                     <li key={index} className="nav-item" onClick={() => this.props.selectLesson(lesson)}>
                         <a className={lesson === this.props.selectedLesson ?
                             "nav-link active" : "nav-link"}>
                             {lesson.title}
                         </a>
+                        <span className="float-right">
+                            { this.state.isEdit ?
+                                <i className="fa fa-check" aria-hidden="true"
+                                   onClick={this.saveLesson}/>
+                                :
+                                <i className="fa fa-pencil" aria-hidden="true"
+                                   onClick={this.editLesson}/>
+                            }
+                            &nbsp;
+                            &nbsp;
+                            <i className="fa fa-times" aria-hidden="true"
+                               onClick={() => this.props.deleteLesson(lesson.id)}/>
+                        </span>
                     </li>
                 )}
 
-                {this.state.isCreateLesson ?
+                {this.props.isCreateLesson ?
                     <div>
                         <input
-                            onChange={this.lessonTitleChanged}
-                            defaultValue={this.state.lesson.title}
+                            onChange={this.props.lessonTitleChanged}
+                            defaultValue="New Lesson"
                             className="form-control">
                         </input>
-                        <button onClick={this.createLesson} className="btn btn-success btn-block">
+                        <button onClick={this.props.createLesson} className="btn btn-success btn-block">
                             Create
                         </button>
-                        <button onClick={this.unsetCreateLesson} className="btn btn-danger btn-block">
+                        <button onClick={this.props.unsetCreateLesson} className="btn btn-danger btn-block">
                             Cancel
                         </button>
                     </div>
                     :
-                    <button onClick={this.setCreateLesson} className="btn btn-primary">
+                    <button onClick={this.props.setCreateLesson} className="btn btn-primary">
                         <i className="fa fa-plus" aria-hidden="true"/>
                     </button>
                 }

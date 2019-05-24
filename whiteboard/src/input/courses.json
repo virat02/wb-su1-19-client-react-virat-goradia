@@ -10,9 +10,11 @@
         "title": "Week 1",
         "lessons": [
           {
+            "id": 1,
             "title": "HTML",
             "topics": [
               {
+                "id": 1,
                 "title": "DOM",
                 "widgets": [
                   {
@@ -40,16 +42,19 @@
                 ]
               },
               {
+                "id": 2,
                 "title": "Tags",
                 "widgets": []
               },
               {
+                "id": 3,
                 "title": "Attributes",
                 "widgets": []
               }
             ]
           },
           {
+            "id": 2,
             "title": "CSS",
             "topics": []
           }
@@ -60,9 +65,11 @@
         "title": "Week 2",
         "lessons": [
           {
+            "id": 1,
             "title": "ABC",
             "topics": [
               {
+                "id": 1,
                 "title": "DOM-ABC",
                 "widgets": [
                   {
@@ -90,19 +97,23 @@
                 ]
               },
               {
+                "id": 2,
                 "title": "Tags-ABC",
                 "widgets": []
               },
               {
+                "id": 3,
                 "title": "Attributes-ABC",
                 "widgets": []
               }
             ]
           },
           {
+            "id": 2,
             "title": "XYZ",
             "topics": [
             {
+              "id": 1,
               "title": "DOM-XYZ",
               "widgets": [
                 {
@@ -130,10 +141,12 @@
               ]
             },
             {
+              "id": 2,
               "title": "Tags-XYZ",
               "widgets": []
             },
             {
+              "id": 3,
               "title": "Attributes-XYZ",
               "widgets": []
             }
@@ -154,9 +167,11 @@
         "title": "Week 1 SQL",
         "lessons": [
           {
+            "id": 1,
             "title": "SQL",
             "topics": [
               {
+                "id": 1,
                 "title": "Queries",
                 "widgets": [
                   {
@@ -184,16 +199,19 @@
                 ]
               },
               {
+                "id": 2,
                 "title": "Tags",
                 "widgets": []
               },
               {
+                "id": 3,
                 "title": "Attributes",
                 "widgets": []
               }
             ]
           },
           {
+            "id": 2,
             "title": "DBMS",
             "topics": []
           }
@@ -204,9 +222,11 @@
         "title": "Week 2 SQL",
         "lessons": [
           {
+            "id": 1,
             "title": "EFG",
             "topics": [
               {
+                "id": 1,
                 "title": "SQL2",
                 "widgets": [
                   {
@@ -234,16 +254,19 @@
                 ]
               },
               {
+                "id": 2,
                 "title": "Tags",
                 "widgets": []
               },
               {
+                "id": 3,
                 "title": "Attributes",
                 "widgets": []
               }
             ]
           },
           {
+            "id": 2,
             "title": "LMN",
             "topics": []
           }

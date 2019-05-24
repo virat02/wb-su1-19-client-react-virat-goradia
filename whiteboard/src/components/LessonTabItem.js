@@ -7,17 +7,16 @@ export default class LessonTabItem extends React.Component {
 
         this.state = {
             isEditLesson : false,
-            lesson: this.props.lesson,
-            selectedLesson: this.props.selectedLesson
+            lesson: this.props.lesson
         };
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-
-        this.setState({
-            lesson : nextProps.lesson,
-            selectedLesson: nextProps.selectedLesson
-        });
+        if(this.props.lesson !== nextProps.lesson) {
+            this.setState({
+                lesson : nextProps.lesson
+            });
+        }
     }
 
 
@@ -46,7 +45,7 @@ export default class LessonTabItem extends React.Component {
         return(
             <li className="nav-item"
                 onClick={() => this.props.selectLesson(this.props.lesson)}>
-                <a className={this.props.lesson === this.state.selectedLesson ?
+                <a className={this.props.lesson === this.props.selectedLesson ?
                     "nav-link active" : "nav-link"}>
                     {this.state.isEditLesson ?
                         <input

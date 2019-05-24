@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c410da53-03f3-4924-948f-119152afce43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/CourseEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard/src/components/CourseEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/SwitchToggle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/SwitchToggle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="2364">
               <caret line="256" column="33" lean-forward="true" selection-start-line="256" selection-start-column="33" selection-end-line="256" selection-end-column="33" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -34,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/whiteboard/src/components/LessonTabs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-233">
-              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="175">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -55,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="51">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPills.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -76,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="34">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
@@ -136,12 +133,12 @@
         <option value="$PROJECT_DIR$/whiteboard/src/input/courses.json" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/LessonListItem.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/LessonTabs.js" />
-        <option value="$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/TopicPills.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/ModuleListItem.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/ModuleList.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/CourseEditor.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js" />
+        <option value="$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js" />
       </list>
     </option>
   </component>
@@ -264,12 +261,12 @@
       <updated>1558289517539</updated>
       <workItem from="1558289521405" duration="260000" />
       <workItem from="1558289954309" duration="6028000" />
-      <workItem from="1558309419992" duration="130360000" />
+      <workItem from="1558309419992" duration="130589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136648000" />
+    <option name="totallyTimeSpent" value="136877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -462,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/LessonTabs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-233">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/components/ModuleList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -492,9 +479,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPills.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="2364">
           <caret line="256" column="33" lean-forward="true" selection-start-line="256" selection-start-column="33" selection-end-line="256" selection-end-column="33" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -502,10 +506,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPills.js">
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/LessonTabs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="175">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -514,15 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/components/LessonTabItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="51">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>

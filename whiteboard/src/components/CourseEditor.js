@@ -51,7 +51,7 @@ export default class CourseEditor extends React.Component {
                 title: 'New Title'
             },
 
-            topics: this.course.modules[0].lessons[0],
+            topics: this.course.modules[0].lessons[0].topics,
             lessons: this.course.modules[0].lessons,
             modules: this.course.modules
         };
@@ -233,6 +233,7 @@ export default class CourseEditor extends React.Component {
     };
 
     render() {
+
         return (
             <Router>
                 <div className="row">
@@ -264,7 +265,7 @@ export default class CourseEditor extends React.Component {
                             selectLesson = {this.selectLesson}/>
                         <br />
                         <TopicPills
-                            topics={this.state.currentLesson.topics}
+                            topics={this.state.topics}
                             lesson = {this.state.currentLesson}
                             selectedTopic={this.state.currentTopic}
                             isCreateTopic = {this.state.isCreateTopic}

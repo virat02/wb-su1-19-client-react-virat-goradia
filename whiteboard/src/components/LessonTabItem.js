@@ -6,15 +6,13 @@ export default class LessonTabItem extends React.Component {
         super(props);
 
         this.state = {
-            isEdit : false,
+            isEditLesson : false,
             lesson: this.props.lesson,
             selectedLesson: this.props.selectedLesson
         };
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-
-        console.log(nextProps);
 
         this.setState({
             lesson : nextProps.lesson,
@@ -25,13 +23,13 @@ export default class LessonTabItem extends React.Component {
 
     editLesson = () => {
         this.setState( {
-            isEdit : true
+            isEditLesson : true
         })
     };
 
     saveLesson = () => {
         this.setState( {
-            isEdit : false
+            isEditLesson : false
         })
     };
 
@@ -44,14 +42,13 @@ export default class LessonTabItem extends React.Component {
     };
 
     render() {
-        console.log(this.state.selectedLesson);
 
         return(
             <li className="nav-item"
                 onClick={() => this.props.selectLesson(this.props.lesson)}>
                 <a className={this.props.lesson === this.state.selectedLesson ?
                     "nav-link active" : "nav-link"}>
-                    {this.state.isEdit ?
+                    {this.state.isEditLesson ?
                         <input
                             onChange={this.lessonTabTitleChanged}
                             defaultValue={this.state.lesson.title}
@@ -61,7 +58,7 @@ export default class LessonTabItem extends React.Component {
                     }
                 </a>
                 <span className="float-right">
-                    { this.state.isEdit ?
+                    { this.state.isEditLesson ?
                         <i className="fa fa-check" aria-hidden="true"
                            onClick={this.saveLesson}/>
                         :

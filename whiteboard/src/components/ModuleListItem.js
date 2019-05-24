@@ -11,7 +11,6 @@ export default class ModuleListItem extends React.Component {
             module : this.props.module,
         };
 
-        console.log(this.props.module);
     }
 
     editModule = () => {

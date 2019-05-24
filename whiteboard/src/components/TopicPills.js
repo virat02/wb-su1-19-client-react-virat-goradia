@@ -1,4 +1,5 @@
 import React from 'react';
+import TopicPillItem from "./TopicPillItem";
 
 export default class TopicPills extends React.Component {
 
@@ -6,55 +7,34 @@ export default class TopicPills extends React.Component {
         super(props);
 
         this.state = {
-            isEdit: false,
-            topic: this.props.selectedTopic,
+            topic: {
+                id: -1,
+                title : 'New Title'
+            },
+
+            topics: this.props.topics
         };
 
     }
-
-    editTopic = () => {
-        this.setState( {
-            isEdit : true
-        })
-    };
-
-    saveTopic = () => {
-        this.setState( {
-            isEdit : false
-        })
-    };
 
     render() {
         return(
 
             <ul className="nav nav-pills">
                 { this.props.topics.map((topic, index) =>
-                    <li key={index} className="nav-item" onClick={() => this.props.selectTopic(topic)}>
-                        <a className={topic === this.props.selectedTopic ?
-                            "nav-link active" : "nav-link"}>
-                            {topic.title}
-                        </a>
-                        <span className="float-right">
-                            { this.state.isEdit ?
-                                <i className="fa fa-check" aria-hidden="true"
-                                   onClick={this.saveTopic}/>
-                                :
-                                <i className="fa fa-pencil" aria-hidden="true"
-                                   onClick={this.editTopic}/>
-                            }
-                            &nbsp;
-                            &nbsp;
-                            <i className="fa fa-times" aria-hidden="true"
-                               onClick={() => this.props.deleteTopic(topic.id)}/>
-                        </span>
-                    </li>
+                        <TopicPillItem
+                            topic={topic}
+                            key={index}
+                            deleteTopic={this.props.deleteTopic}
+                            selectTopic = {this.props.selectTopic}
+                            selectedTopic = {this.props.selectedTopic}/>
                 )}
 
                 {this.props.isCreateTopic ?
                     <div className="input-group">
                         <input type="text"
                             onChange={this.props.topicTitleChanged}
-                            defaultValue={this.state.topic.title}
+                            defaultValue="New Title"
                             className="form-control">
                         </input>
                         <span >

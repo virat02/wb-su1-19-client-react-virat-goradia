@@ -9,7 +9,6 @@ export default class ModuleList extends React.Component {
         this.state = {
             modules: this.props.modules
         };
-
     }
 
     render() {

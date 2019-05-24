@@ -42,18 +42,17 @@ export default class CourseGridTableHeader extends React.Component {
                             this.state.isTable ?
                                 <Link
                                     to="/course/table">
-                                    <button onClick={this.changeView}>
-                                        <i className="fa fa-list" aria-hidden = "true"/>
+                                    <button>
+                                        <i onClick={this.changeView} className="fa fa-list" aria-hidden = "true"/>
                                     </button>
                                 </Link>
                                 :
                                 <Link
                                     to="/course/grid">
-                                    <button onClick={this.changeView}>
-                                        <i className="fa fa-table" aria-hidden = "true"/>
+                                    <button>
+                                        <i onClick={this.changeView} className="fa fa-table" aria-hidden = "true"/>
                                     </button>
                                 </Link>
-
                         }
                     </div>
                     <div>

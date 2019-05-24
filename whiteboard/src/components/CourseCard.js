@@ -9,12 +9,9 @@ const CourseCard = ({course, selectCourse}) =>
         <div className="card-body">
             <h5 className="card-title">{course.title}</h5>
             <p className="card-text text-muted">Modified {course.lastModified}</p>
-            <Link className="btn btn-primary"
-                to={`/course/${course.id}`}>
-                <button className="btn btn-primary">
-                    More
-                </button>
-            </Link>
+            <a href = {`/course/edit/${course.id}`}>
+                More
+            </a>
         </div>
     </div>;
 

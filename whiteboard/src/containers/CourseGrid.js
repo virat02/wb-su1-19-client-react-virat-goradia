@@ -3,7 +3,7 @@ import CourseCard from '../components/CourseCard';
 
 const CourseGrid =({courses,selectCourse}) =>
 
-    <div className="row card-deck">
+    <div className="row card-group">
         {
 
             courses.map((course, key) =>
@@ -16,18 +16,3 @@ const CourseGrid =({courses,selectCourse}) =>
 
 
 export default CourseGrid;
-
-// export default class CourseGrid extends React.Component {
-//
-//     render() {
-//         return (
-//             <div className="card-deck">
-//                 {
-//                     courses.map((course, key) =>
-//                     <CourseCard
-//                         course={course}
-//                         key={key}/>)}
-//             </div>
-//         );
-//     }
-// }

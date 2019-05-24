@@ -11,16 +11,20 @@ export default class CourseEditor extends React.Component {
         super(props);
         this.courseService = new CourseService();
         this.courseId = this.props.match.params.courseId;
+        this.course = this.courseService.findCourseById(this.courseId);
 
         this.state = {
-            course: this.courseService.findCourseById(this.courseId),
-            module: this.courseService.findCourseById(this.courseId).modules[0],
-            lesson: null,
-            topic: null,
+            course: this.course,
+            module: this.course.modules[0],
+            lesson: this.course.modules[0].lessons[0],
+            topic: this.course.modules[0].lessons[0].topics[0],
             courseId: this.courseId
         };
 
         this.selectModule = this.selectModule.bind(this);
+        this.selectLesson = this.selectLesson.bind(this);
+        this.selectTopic = this.selectTopic.bind(this);
+
     }
 
     selectModule = module =>
@@ -29,6 +33,21 @@ export default class CourseEditor extends React.Component {
                 module: module,
                 lesson: module.lessons[0],
                 topic: module.lessons[0].topics[0],
+            }
+        );
+
+    selectLesson = lesson =>
+        this.setState(
+            {
+                lesson: lesson,
+                topic: lesson.topics[0],
+            }
+        );
+
+    selectTopic = topic =>
+        this.setState(
+            {
+                topic: topic
             }
         );
 
@@ -46,9 +65,13 @@ export default class CourseEditor extends React.Component {
                             selectModule = {this.selectModule}/>
                     </div>
                     <div className="col-9 right">
-                        <LessonTabs lessons={this.state.module.lessons} />
+                        <LessonTabs
+                            lessons={this.state.module.lessons}
+                            selectLesson = {this.selectLesson}/>
                         <br />
-                        <TopicPills topics={this.state.topic} />
+                        <TopicPills
+                            topics={this.state.lesson.topics}
+                            selectTopic = {this.selectTopic}/>
                     </div>
                 </div>
             </Router>

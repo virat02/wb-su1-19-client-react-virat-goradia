@@ -112,7 +112,108 @@
     "title": "CS5200",
     "ownedBy" : "me",
     "lastModified": "5:00 pm",
-    "modules": []
+    "modules": [
+      {
+        "id" : 1,
+        "title": "Week 1 SQL",
+        "lessons": [
+          {
+            "title": "SQL",
+            "topics": [
+              {
+                "title": "Queries",
+                "widgets": [
+                  {
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The SQL Queries"
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces SQL"
+                  },
+                  {
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "SQL",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "widgets": []
+              },
+              {
+                "title": "Attributes",
+                "widgets": []
+              }
+            ]
+          },
+          {
+            "title": "DBMS",
+            "topics": []
+          }
+        ]
+      },
+      {
+        "id" : 2,
+        "title": "Week 2 SQL",
+        "lessons": [
+          {
+            "title": "EFG",
+            "topics": [
+              {
+                "title": "SQL2",
+                "widgets": [
+                  {
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "SQL 2"
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces SQL 2"
+                  },
+                  {
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "widgets": []
+              },
+              {
+                "title": "Attributes",
+                "widgets": []
+              }
+            ]
+          },
+          {
+            "title": "LMN",
+            "topics": []
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "345",

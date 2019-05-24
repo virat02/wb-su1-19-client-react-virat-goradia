@@ -8,8 +8,7 @@ export default class LessonTabs extends React.Component {
         this.state = {
             isCreateLesson: false,
             editMode: false,
-            lesson: this.props.selectedLesson,
-            lessons: this.props.lessons
+            lesson: this.props.selectedLesson
         };
     }
 
@@ -18,7 +17,7 @@ export default class LessonTabs extends React.Component {
 
 
         this.setState({
-            lessons: [...this.state.lessons, this.state.lesson ],
+            lessons: this.props.lessons.push(this.state.lesson),
             isCreateLesson : false
         })
     };
@@ -77,7 +76,7 @@ export default class LessonTabs extends React.Component {
                         </button>
                     </div>
                     :
-                    <button onClick={this.setCreateLesson} className="btn btn-primary btn-block">
+                    <button onClick={this.setCreateLesson} className="btn btn-primary">
                         <i className="fa fa-plus" aria-hidden="true"/>
                     </button>
                 }

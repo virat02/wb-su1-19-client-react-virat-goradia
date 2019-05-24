@@ -10,8 +10,6 @@ export default class ModuleListItem extends React.Component {
             module: this.props.module,
             isEdit: false,
         };
-
-        console.log(this.state.module);
     }
 
     editModule = () => {

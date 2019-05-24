@@ -7,7 +7,7 @@ export default class ModuleList extends React.Component {
         super(props);
 
         this.state = {
-            isCreate: false,
+            isCreateModule: false,
             editMode: false,
             module: {
                 id: -1,
@@ -25,8 +25,6 @@ export default class ModuleList extends React.Component {
             },
             modules: this.props.modules
         };
-
-        console.log(this.state.isCreate);
     }
 
     createModule = () => {
@@ -45,15 +43,15 @@ export default class ModuleList extends React.Component {
         })
     };
 
-    setCreate = () => {
+    setCreateModule = () => {
         this.setState( {
-            isCreate: true
+            isCreateModule: true
         });
     };
 
-    unsetCreate = () => {
+    unsetCreateModule = () => {
         this.setState( {
-            isCreate: false
+            isCreateModule: false
         });
     };
 
@@ -81,7 +79,9 @@ export default class ModuleList extends React.Component {
             <div>
                 <nav className="navbar navbar-expand-lg">
                     <a href="/"><i className='fa fa-times'/></a>
-                    <a className="navbar-brand col-3 float-right" ><b>{this.props.course.title}</b></a>
+                    <a className="navbar-brand col-3 float-right" >
+                        <b>{this.props.course.title}</b>
+                    </a>
                 </nav>
 
                 <ul className="list-group">
@@ -100,7 +100,7 @@ export default class ModuleList extends React.Component {
                     }
 
                     <li className="list-group-item">
-                        {this.state.isCreate ?
+                        {this.state.isCreateModule ?
                             <div>
                                 <input
                                 onChange={this.titleChanged}
@@ -110,12 +110,12 @@ export default class ModuleList extends React.Component {
                                 <button onClick={this.createModule} className="btn btn-success btn-block">
                                     Create
                                 </button>
-                                <button onClick={this.unsetCreate} className="btn btn-danger btn-block">
+                                <button onClick={this.unsetCreateModule} className="btn btn-danger btn-block">
                                     Cancel
                                 </button>
                             </div>
                         :
-                            <button onClick={this.setCreate} className="btn btn-primary btn-block">
+                            <button onClick={this.setCreateModule} className="btn btn-primary btn-block">
                                 <i className="fa fa-plus" aria-hidden="true"/>
                             </button>
                         }

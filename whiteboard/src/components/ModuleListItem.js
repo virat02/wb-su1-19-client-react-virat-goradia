@@ -16,7 +16,13 @@ export default class ModuleListItem extends React.Component {
 
     editModule = () => {
         this.setState( {
-            isEdit : !this.state.isEdit
+            isEdit : true
+        })
+    };
+
+    saveModule = () => {
+        this.setState( {
+            isEdit : false
         })
     };
 
@@ -44,17 +50,18 @@ export default class ModuleListItem extends React.Component {
                                 defaultValue={this.state.module.title}
                                 className="form-control"/>
                             :
-                            <label>{this.state.module.title} </label>                        }
+                            <label>{this.state.module.title} </label>
+                        }
 
                         <span className="float-right">
                             { this.state.isEdit ?
                                 <i className="fa fa-check" aria-hidden="true"
-                                   onClick={this.editModule}/>
+                                   onClick={this.saveModule}/>
                                 :
                                 <i className="fa fa-pencil" aria-hidden="true"
                                    onClick={this.editModule}/>
                             }
-
+                            &nbsp;
                             &nbsp;
                             <i className="fa fa-times" aria-hidden="true"
                                onClick={() => this.props.deleteModule(this.props.module.id)}/>

@@ -67,10 +67,12 @@ export default class CourseEditor extends React.Component {
                     <div className="col-9 right">
                         <LessonTabs
                             lessons={this.state.module.lessons}
+                            selectedLesson={this.state.lesson}
                             selectLesson = {this.selectLesson}/>
                         <br />
                         <TopicPills
                             topics={this.state.lesson.topics}
+                            selectedTopic={this.state.topic}
                             selectTopic = {this.selectTopic}/>
                     </div>
                 </div>

@@ -17,6 +17,7 @@ export default class ModuleList extends React.Component {
                         title: 'New Lesson',
                         topics: [
                             {
+                                id: -1,
                                 title : 'New Title'
                             }
                         ]
@@ -55,21 +56,10 @@ export default class ModuleList extends React.Component {
         });
     };
 
-    titleChanged = (event) => {
+    moduleTitleChanged = (event) => {
         this.setState({
             module: {
-                title: event.target.value,
-                id: (new Date()).getTime(),
-                lessons: [
-                    {
-                        title: 'New Lesson',
-                        topics: [
-                            {
-                                title : 'New Title'
-                            }
-                        ]
-                    }
-                ]
+                title: event.target.value
             }
         });
     };
@@ -103,7 +93,7 @@ export default class ModuleList extends React.Component {
                         {this.state.isCreateModule ?
                             <div>
                                 <input
-                                onChange={this.titleChanged}
+                                onChange={this.moduleTitleChanged}
                                 defaultValue={this.state.module.title}
                                 className="form-control">
                                 </input>

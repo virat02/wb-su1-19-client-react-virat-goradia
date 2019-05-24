@@ -25,6 +25,8 @@ export default class CourseEditor extends React.Component {
         this.selectLesson = this.selectLesson.bind(this);
         this.selectTopic = this.selectTopic.bind(this);
 
+        console.log(this.state.module);
+
     }
 
     selectModule = module =>

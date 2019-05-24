@@ -5,8 +5,49 @@ export default class LessonTabs extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(this.props.lessons[0] === this.props.selectedLesson);
+        this.state = {
+            isCreateLesson: false,
+            editMode: false,
+            lesson: this.props.selectedLesson,
+            lessons: this.props.lessons
+        };
     }
+
+    createLesson = () => {
+        this.state.lesson.id = (new Date()).getTime();
+
+
+        this.setState({
+            lessons: [...this.state.lessons, this.state.lesson ],
+            isCreateLesson : false
+        })
+    };
+
+    deleteLesson = (id) => {
+        this.setState({
+            lessons: this.state.lessons.filter(lesson => lesson.id !== id)
+        })
+    };
+
+    setCreateLesson = () => {
+        this.setState( {
+            isCreateLesson: true
+        });
+    };
+
+    unsetCreateLesson = () => {
+        this.setState( {
+            isCreateLesson: false
+        });
+    };
+
+    lessonTitleChanged = (event) => {
+        this.setState({
+            lesson: {
+                title: event.target.value
+            }
+        });
+    };
 
     render() {
     return (
@@ -21,9 +62,25 @@ export default class LessonTabs extends React.Component {
                     </li>
                 )}
 
-                <button className="btn btn-primary float-right">
-                    <i className="fa fa-plus" aria-hidden="true"/>
-                </button>
+                {this.state.isCreateLesson ?
+                    <div>
+                        <input
+                            onChange={this.lessonTitleChanged}
+                            defaultValue={this.state.lesson.title}
+                            className="form-control">
+                        </input>
+                        <button onClick={this.createLesson} className="btn btn-success btn-block">
+                            Create
+                        </button>
+                        <button onClick={this.unsetCreateLesson} className="btn btn-danger btn-block">
+                            Cancel
+                        </button>
+                    </div>
+                    :
+                    <button onClick={this.setCreateLesson} className="btn btn-primary btn-block">
+                        <i className="fa fa-plus" aria-hidden="true"/>
+                    </button>
+                }
             </ul>
         </div>
     );

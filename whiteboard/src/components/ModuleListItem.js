@@ -7,11 +7,11 @@ export default class ModuleListItem extends React.Component {
         super(props);
 
         this.state = {
-            module: {
-                title: this.props.module.title,
-            },
+            module: this.props.module,
             isEdit: false,
         };
+
+        console.log(this.state.module);
     }
 
     editModule = () => {

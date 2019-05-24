@@ -63,7 +63,7 @@
             "title": "ABC",
             "topics": [
               {
-                "title": "DOM",
+                "title": "DOM-ABC",
                 "widgets": [
                   {
                     "type": "HEADING",
@@ -90,18 +90,54 @@
                 ]
               },
               {
-                "title": "Tags",
+                "title": "Tags-ABC",
                 "widgets": []
               },
               {
-                "title": "Attributes",
+                "title": "Attributes-ABC",
                 "widgets": []
               }
             ]
           },
           {
             "title": "XYZ",
-            "topics": []
+            "topics": [
+            {
+              "title": "DOM-XYZ",
+              "widgets": [
+                {
+                  "type": "HEADING",
+                  "size": 1,
+                  "text": "The Document Object Model"
+                },
+                {
+                  "type": "PARAGRAPH",
+                  "text": "This topic introduces the DOM"
+                },
+                {
+                  "type": "LIST",
+                  "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                },
+                {
+                  "type": "IMAGE",
+                  "src": "https://picsum.photos/200"
+                },
+                {
+                  "type": "LINK",
+                  "title": "The DOM",
+                  "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                }
+              ]
+            },
+            {
+              "title": "Tags-XYZ",
+              "widgets": []
+            },
+            {
+              "title": "Attributes-XYZ",
+              "widgets": []
+            }
+          ]
           }
         ]
       }

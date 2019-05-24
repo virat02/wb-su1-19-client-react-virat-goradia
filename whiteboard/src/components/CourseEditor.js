@@ -62,8 +62,9 @@ export default class CourseEditor extends React.Component {
 
     }
 
-    //All methods for a module
-
+    /**
+     *  All methods for a module
+     */
     selectModule = module =>
         this.setState(
             {
@@ -123,8 +124,9 @@ export default class CourseEditor extends React.Component {
         });
     };
 
-    //All methods for a lesson
-
+    /**
+     * All methods for a lesson
+     */
     selectLesson = lesson =>
         this.setState(
             {
@@ -148,9 +150,19 @@ export default class CourseEditor extends React.Component {
     };
 
     deleteLesson = (id) => {
+
+        let i, newCurrLesson;
+        for(i=0; i< this.state.lessons.length; i++) {
+            if(this.state.lessons[i].id === id){
+                console.log("i :"+i);
+                newCurrLesson = this.state.lessons[i-1];
+            }
+        }
+
         this.setState({
-            lessons : this.state.lessons.filter(lesson => lesson.id !== id)
-        })
+            lessons : this.state.lessons.filter(lesson => lesson.id !== id),
+            currentLesson: newCurrLesson
+        });
     };
 
     setCreateLesson = () => {
@@ -173,8 +185,9 @@ export default class CourseEditor extends React.Component {
         });
     };
 
-    //All methods for a topic
-
+    /**
+     *  All methods for a topic
+     */
     selectTopic = topic =>
         this.setState(
             {
@@ -220,7 +233,6 @@ export default class CourseEditor extends React.Component {
     };
 
     render() {
-
         return (
             <Router>
                 <div className="row">

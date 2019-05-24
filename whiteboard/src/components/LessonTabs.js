@@ -1,4 +1,5 @@
 import React from 'react';
+import LessonTabItem from "./LessonTabItem";
 
 export default class LessonTabs extends React.Component {
 
@@ -6,49 +7,35 @@ export default class LessonTabs extends React.Component {
         super(props);
 
         this.state = {
-            isEdit: false,
-            lesson: this.props.lessons[0],
+            lesson: {
+                title: 'New Lesson',
+                topics: [
+                    {
+                        id: -1,
+                        title : 'New Title'
+                    }
+                ]
+            },
+
+            lessons : this.props.lessons
         };
     }
-
-    editLesson = () => {
-        this.setState( {
-            isEdit : true
-        })
-    };
-
-    saveLesson = () => {
-        this.setState( {
-            isEdit : false
-        })
-    };
 
     render() {
     return (
         <div>
             <ul className="nav nav-tabs">
                 {
-                    this.props.lessons.map((lesson, index) =>
-                    <li key={index} className="nav-item" onClick={() => this.props.selectLesson(lesson)}>
-                        <a className={lesson === this.props.selectedLesson ?
-                            "nav-link active" : "nav-link"}>
-                            {lesson.title}
-                        </a>
-                        <span className="float-right">
-                            { this.state.isEdit ?
-                                <i className="fa fa-check" aria-hidden="true"
-                                   onClick={this.saveLesson}/>
-                                :
-                                <i className="fa fa-pencil" aria-hidden="true"
-                                   onClick={this.editLesson}/>
-                            }
-                            &nbsp;
-                            &nbsp;
-                            <i className="fa fa-times" aria-hidden="true"
-                               onClick={() => this.props.deleteLesson(lesson.id)}/>
-                        </span>
-                    </li>
-                )}
+                    this.props.lessons.map(
+                        (lesson, index) =>
+                            <LessonTabItem
+                                lesson={lesson}
+                                key={index}
+                                deleteLesson={this.props.deleteLesson}
+                                selectLesson = {this.props.selectLesson}
+                                selectedLesson = {this.props.selectedLesson}/>
+                    )
+                }
 
                 {this.props.isCreateLesson ?
                     <div>

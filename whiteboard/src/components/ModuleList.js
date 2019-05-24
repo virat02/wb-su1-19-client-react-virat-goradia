@@ -7,21 +7,6 @@ export default class ModuleList extends React.Component {
         super(props);
 
         this.state = {
-            module: {
-                id: -1,
-                title: 'New Module',
-                lessons: [
-                    {
-                        title: 'New Lesson',
-                        topics: [
-                            {
-                                id: -1,
-                                title : 'New Title'
-                            }
-                        ]
-                    }
-                ]
-            },
             modules: this.props.modules
         };
 
@@ -46,8 +31,7 @@ export default class ModuleList extends React.Component {
                                     key={index}
                                     deleteModule={this.props.deleteModule}
                                     selectModule = {this.props.selectModule}
-                                    selectedModule = {this.props.selectedModule}
-                                    moduleTitleChanged = {this.props.moduleTitleChanged}/>
+                                    selectedModule = {this.props.selectedModule}/>
                         )
                     }
 

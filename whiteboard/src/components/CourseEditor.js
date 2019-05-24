@@ -14,7 +14,6 @@ export default class CourseEditor extends React.Component {
         this.course = this.courseService.findCourseById(this.courseId);
 
         this.state = {
-            isEditModule: false,
             isCreateLesson: false,
             isCreateModule : false,
             isCreateTopic : false,
@@ -56,24 +55,25 @@ export default class CourseEditor extends React.Component {
             modules: this.course.modules
         };
 
-        this.selectModule = this.selectModule.bind(this);
-        this.selectLesson = this.selectLesson.bind(this);
-        this.selectTopic = this.selectTopic.bind(this);
-
     }
 
     /**
      *  All methods for a module
      */
-    selectModule = module =>
+    selectModule = module => {
+
+        //console.log(module.lessons[0].topics);
+
         this.setState(
             {
                 currentModule: module,
                 currentLesson: module.lessons[0],
                 currentTopic: module.lessons[0].topics[0],
-                lessons: module.lessons
-            }
+                lessons: module.lessons,
+                topics: module.lessons[0].topics
+            }, () => console.log(this.state)
         );
+    }
 
     createModule = () => {
 
@@ -115,8 +115,6 @@ export default class CourseEditor extends React.Component {
 
     moduleTitleChanged = (event) => {
 
-        console.log(event.target);
-
         this.setState({
             module: {
                 title: event.target.value
@@ -132,6 +130,7 @@ export default class CourseEditor extends React.Component {
             {
                 currentLesson: lesson,
                 currentTopic: lesson.topics[0],
+                topics: lesson.topics
             }
         );
 
@@ -151,17 +150,8 @@ export default class CourseEditor extends React.Component {
 
     deleteLesson = (id) => {
 
-        let i, newCurrLesson;
-        for(i=0; i< this.state.lessons.length; i++) {
-            if(this.state.lessons[i].id === id){
-                console.log("i :"+i);
-                newCurrLesson = this.state.lessons[i-1];
-            }
-        }
-
         this.setState({
-            lessons : this.state.lessons.filter(lesson => lesson.id !== id),
-            currentLesson: newCurrLesson
+            lessons : this.state.lessons.filter(lesson => lesson.id !== id)
         });
     };
 

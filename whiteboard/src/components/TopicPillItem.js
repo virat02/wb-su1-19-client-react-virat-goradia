@@ -12,6 +12,16 @@ export default class TopicPillItem extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(this.props.topic !== nextProps.topic) {
+            this.setState({
+                topic : nextProps.topic,
+                selectedTopic: nextProps.selectedTopic
+            });
+        }
+
+    }
+
     editTopic = () => {
         this.setState( {
             isEditTopic : true

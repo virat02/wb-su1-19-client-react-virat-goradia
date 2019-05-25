@@ -43,13 +43,10 @@ export default class LessonTabs extends React.Component {
                             onChange={this.props.lessonTitleChanged}
                             defaultValue="New Lesson"
                             className="form-control">
-                        </input>
-                        <button onClick={this.props.createLesson} className="btn btn-success btn-block">
-                            Create
-                        </button>
-                        <button onClick={this.props.unsetCreateLesson} className="btn btn-danger btn-block">
-                            Cancel
-                        </button>
+                        </input> &nbsp;&nbsp;
+                        <i onClick={this.props.createLesson} className="fa fa-plus" aria-hidden="true"/>
+                        &nbsp;&nbsp;
+                        <i onClick={this.props.unsetCreateLesson} className="fa fa-close" aria-hidden="true"/>
                         &nbsp;
                     </div>
                     :

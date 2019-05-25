@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c410da53-03f3-4924-948f-119152afce43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/whiteboard/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/components/CourseCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard/src/components/CourseCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiteboard/src/containers/CourseGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/whiteboard/src/containers/CourseGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CourseGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/CourseGridCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/CourseGridCss.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,101 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/NavBar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseGridTableHeader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseRow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="47" selection-start-line="6" selection-start-column="17" selection-end-line="8" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/containers/CourseGrid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/css/CourseGridCss.css">
+        <entry file="file://$PROJECT_DIR$/src/css/CourseGridCss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="374">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/containers/CourseTable.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/CourseGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/whiteboard/src/components/ModuleList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -180,6 +94,8 @@
         <option value="$PROJECT_DIR$/whiteboard/src/components/CourseCard.js" />
         <option value="$PROJECT_DIR$/whiteboard/src/css/CourseGridCss.css" />
         <option value="$PROJECT_DIR$/whiteboard/src/containers/CourseGrid.js" />
+        <option value="$PROJECT_DIR$/src/containers/CourseGrid.js" />
+        <option value="$PROJECT_DIR$/src/css/CourseGridCss.css" />
       </list>
     </option>
   </component>
@@ -206,41 +122,25 @@
             <path>
               <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
               <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
               <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
               <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
               <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wb-su1-19-client-react-virat-goradia" type="462c0819:PsiDirectoryNode" />
-              <item name="whiteboard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wb-su1-19-client-react-virat-goradia" type="b2602c69:ProjectViewProjectNode" />
@@ -312,16 +212,18 @@
       <workItem from="1558289521405" duration="260000" />
       <workItem from="1558289954309" duration="6028000" />
       <workItem from="1558309419992" duration="141203000" />
+      <workItem from="1558755477155" duration="1136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147491000" />
+    <option name="totallyTimeSpent" value="148627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26153848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -356,9 +258,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/whiteboard/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/whiteboard/src/App.js" />
     <entry file="file://$PROJECT_DIR$/whiteboard/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -410,13 +310,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/package.json" />
     <entry file="file://$PROJECT_DIR$/whiteboard/src/containers/WhiteBoard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -434,9 +328,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/TopicPillItem.css" />
     <entry file="file://$PROJECT_DIR$/whiteboard/src/css/LessonTabItem.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -511,53 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/ModuleList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseGridTableHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/whiteboard/src/containers/CourseTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/css/CourseRowCss.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -565,9 +410,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseGridTableHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/components/CourseRow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="102">
           <caret line="8" column="47" selection-start-line="6" selection-start-column="17" selection-end-line="8" selection-end-column="47" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -595,10 +467,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/containers/CourseTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whiteboard/src/components/ModuleList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/whiteboard/src/css/CourseGridCss.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/CourseGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/CourseGridCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>

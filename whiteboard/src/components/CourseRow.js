@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
-const CourseRow = ({course, selectCourse}) =>
+const CourseRow = ({course, selectCourse, deleteCourse}) =>
         <Router>
             <div className="row">
                 <div className="col-6">
@@ -18,7 +18,8 @@ const CourseRow = ({course, selectCourse}) =>
                 <div className="col-2">
                     <Link
                         to={`/course/delete/${course.id}`}>
-                        <i className="fa fa-times"/>
+                        <i onClick={() => deleteCourse(course.id)}
+                           className="fa fa-times"/>
                     </Link>
 
                 </div>

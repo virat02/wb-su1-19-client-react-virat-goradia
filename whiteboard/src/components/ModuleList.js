@@ -41,13 +41,11 @@ export default class ModuleList extends React.Component {
                                 onChange={this.props.moduleTitleChanged}
                                 defaultValue="New Module"
                                 className="form-control">
-                                </input>
-                                <button onClick={this.props.createModule} className="btn btn-success btn-block">
-                                    Create
-                                </button>
-                                <button onClick={this.props.unsetCreateModule} className="btn btn-danger btn-block">
-                                    Cancel
-                                </button>
+                                </input>&nbsp;&nbsp;
+                                <i onClick={this.props.createModule} className="fa fa-plus" aria-hidden="true"/>
+                                &nbsp;&nbsp;
+                                <i onClick={this.props.unsetCreateModule} className="fa fa-close" aria-hidden="true"/>
+                                &nbsp;
                             </div>
                         :
                             <button onClick={this.props.setCreateModule} className="btn btn-primary btn-block">

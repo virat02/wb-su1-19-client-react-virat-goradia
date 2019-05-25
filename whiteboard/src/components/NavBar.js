@@ -1,23 +1,39 @@
 import React from 'react';
 
-const NavBar = () =>
-    <div>
-        <nav className="navbar navbar-light bg-light justify-content-between">
-            <a className="nav-item" href="#">
-                <i className="fa fa-bars"/>
-            </a>
-            <a className="navbar-brand">Course Manager</a>
-            <form className="form-inline">
-                <input className="form-control mr-sm-2" type="search"
-                       placeholder="New Course Title" aria-label="Search" />
-                <a className="nav-item" href="#">
-                    <i className="fa fa-search"/>
-                </a>
-                <a className="nav-link" href="#">
-                    <i className="fa fa-plus" aria-hidden="true"/>
-                </a>
-            </form>
-        </nav>
-    </div>;
 
-export default NavBar;
+
+export default class NavBar extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+
+        return(
+            <nav className="navbar navbar-dark bg-secondary">
+                <button type="button" className="navbar-toggler"
+                        data-toggle="collapse" data-target="#navbarCollapse">
+                    <span className="navbar-toggler-icon"/>
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <label className="navbar-brand float-left" >
+                    Course Name
+                </label>
+                <form className="form-inline ml-auto">
+                    <div className="col-xs-4">
+                        <input type="text"
+                               onChange={this.props.courseTitleChanged}
+                               value={this.props.course.title}
+                               className="form-control mr-sm-2 float-left"
+                               placeholder="New Course Title">
+                        </input>
+                    </div>
+                    <i className="fa fa-search" aria-hidden="true"/>
+                    &nbsp;
+                    <i onClick={this.props.createCourse}
+                       className="fa fa-plus" aria-hidden="true"/>
+                </form>
+            </nav>
+        );
+    }
+}

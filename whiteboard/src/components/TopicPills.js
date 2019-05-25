@@ -1,6 +1,6 @@
 import React from 'react';
 import TopicPillItem from "./TopicPillItem";
-import './LessonTabItem.css';
+import '../css/LessonTabItem.css';
 
 export default class TopicPills extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import './LessonTabItem.css';
+import '../css/LessonTabItem.css';
 
 export default class LessonTabItem extends React.Component {
 

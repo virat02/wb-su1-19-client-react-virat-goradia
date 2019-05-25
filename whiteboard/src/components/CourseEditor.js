@@ -62,8 +62,6 @@ export default class CourseEditor extends React.Component {
      */
     selectModule = module => {
 
-        //console.log(module.lessons[0].topics);
-
         this.setState(
             {
                 currentModule: module,
@@ -73,7 +71,7 @@ export default class CourseEditor extends React.Component {
                 topics: module.lessons[0].topics
             }, () => console.log(this.state)
         );
-    }
+    };
 
     createModule = () => {
 
@@ -103,7 +101,10 @@ export default class CourseEditor extends React.Component {
 
     setCreateModule = () => {
         this.setState( {
-            isCreateModule: true
+            isCreateModule: true,
+            module : {
+                title: "New Module"
+            }
         });
     };
 
@@ -157,7 +158,10 @@ export default class CourseEditor extends React.Component {
 
     setCreateLesson = () => {
         this.setState( {
-            isCreateLesson: true
+            isCreateLesson: true,
+            lesson: {
+                title : "New Lesson"
+            }
         });
     };
 
@@ -203,7 +207,10 @@ export default class CourseEditor extends React.Component {
 
     setCreateTopic = () => {
         this.setState( {
-            isCreateTopic: true
+            isCreateTopic: true,
+            topic: {
+                title : "New Topic"
+            }
         });
     };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import CourseCard from '../components/CourseCard';
+import '../css/CourseGridCss.css';
 
 const CourseGrid =({courses,selectCourse,selectedCourse, deleteCourse}) =>
 
-    <div className="row card-group">
+    <div className="row card-columns">
         {
-
             courses.map((course, key) =>
                 <CourseCard
                     className="col-2"

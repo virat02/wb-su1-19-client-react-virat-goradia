@@ -15,16 +15,15 @@ const CourseCard = ({course, selectCourse, selectedCourse, deleteCourse}) =>
             <a href = {`/course/edit/${course.id}`}>
                 More
             </a>
-            <div className="col-2">
-                <Link
-                    to={`/course/delete/${course.id}`}>
-                    <button
-                        onClick={() => deleteCourse(course.id)}
-                        className="btn btn-danger" >
-                        Remove
-                    </button>
-                </Link>
-            </div>
+            &nbsp;&nbsp;&nbsp;
+            <Link
+                to={`/course/delete/${course.id}`}>
+                <button
+                    onClick={() => deleteCourse(course.id)}
+                    className="btn btn-danger" >
+                    Remove
+                </button>
+            </Link>
         </div>
     </div>;
 

@@ -10,6 +10,7 @@ export default class CourseManager extends React.Component {
         this.courseService = new CourseService();
 
         this.state = {
+            selectedCourse: '',
             course: {
                 id: -1,
                 title: "New Course",
@@ -54,6 +55,15 @@ export default class CourseManager extends React.Component {
             courses: this.state.courses.filter(course => course.id !== id)
         });
 
+    selectCourse = course => {
+
+        console.log("here");
+
+        this.setState({
+            selectedCourse: course
+        });
+    };
+
     render() {
         return (
             <div>
@@ -62,6 +72,8 @@ export default class CourseManager extends React.Component {
                     createCourse = {this.createCourse}
                     course={this.state.course}/>
                 <CourseGridTableHeader
+                    selectCourse = {this.selectCourse}
+                    selectedCourse = {this.state.selectedCourse}
                     deleteCourse = {this.deleteCourse}
                     courses = {this.state.courses}/>
             </div>

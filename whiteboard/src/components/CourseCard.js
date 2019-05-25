@@ -1,9 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Link} from 'react-router-dom';
+import '../css/CourseRowCss.css';
 
-const CourseCard = ({course, selectCourse}) =>
+const CourseCard = ({course, selectCourse, selectedCourse, deleteCourse}) =>
 
-    <div className="card">
+    <div onClick={() => selectCourse(course)}
+         className={selectedCourse === course ?
+             "card highlight " : "card"}>
         <img className="card-img-top"
              src="https://picsum.photos/300/200"/>
         <div className="card-body">
@@ -12,6 +15,16 @@ const CourseCard = ({course, selectCourse}) =>
             <a href = {`/course/edit/${course.id}`}>
                 More
             </a>
+            <div className="col-2">
+                <Link
+                    to={`/course/delete/${course.id}`}>
+                    <button
+                        onClick={() => deleteCourse(course.id)}
+                        className="btn btn-danger" >
+                        Remove
+                    </button>
+                </Link>
+            </div>
         </div>
     </div>;
 

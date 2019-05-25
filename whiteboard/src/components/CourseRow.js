@@ -1,10 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import '../css/CourseRowCss.css';
 
-const CourseRow = ({course, selectCourse, deleteCourse}) =>
+const CourseRow = ({course, selectCourse, selectedCourse, deleteCourse}) =>
         <Router>
-            <div className="row">
-                <div className="col-6">
+            <div onClick={() => selectCourse(course)}
+                 className={selectedCourse === course ?
+                     "row highlight " : "row"}>
+                <div className="col-6 text-black" >
                    <a href = {`/course/edit/${course.id}`}>
                        {course.title}
                    </a>
@@ -21,7 +24,6 @@ const CourseRow = ({course, selectCourse, deleteCourse}) =>
                         <i onClick={() => deleteCourse(course.id)}
                            className="fa fa-times"/>
                     </Link>
-
                 </div>
             </div>
         </Router>;

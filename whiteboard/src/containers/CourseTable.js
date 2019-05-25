@@ -2,7 +2,7 @@ import React from 'react';
 import CourseRow from '../components/CourseRow';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-const CourseTable =({courses,selectCourse,deleteCourse}) =>
+const CourseTable =({courses,selectCourse, selectedCourse,deleteCourse}) =>
 
         <div>
             {
@@ -11,6 +11,7 @@ const CourseTable =({courses,selectCourse,deleteCourse}) =>
                         <CourseRow
                             selectCourse={selectCourse}
                             deleteCourse={deleteCourse}
+                            selectedCourse={selectedCourse}
                             course={course}
                             key={key}/>
                 )

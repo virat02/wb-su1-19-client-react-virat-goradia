@@ -1,7 +1,7 @@
 import React from 'react';
 import CourseCard from '../components/CourseCard';
 
-const CourseGrid =({courses,selectCourse}) =>
+const CourseGrid =({courses,selectCourse,selectedCourse, deleteCourse}) =>
 
     <div className="row card-group">
         {
@@ -10,6 +10,8 @@ const CourseGrid =({courses,selectCourse}) =>
                 <CourseCard
                     className="col-2"
                     selectCourse={selectCourse}
+                    deleteCourse={deleteCourse}
+                    selectedCourse = {selectedCourse}
                     course={course}
                     key={key}/>)}
     </div>;

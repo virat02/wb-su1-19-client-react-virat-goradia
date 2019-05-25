@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router,Link,Route } from 'react-router-dom';
 import CourseGrid from "../containers/CourseGrid";
 import CourseTable from "../containers/CourseTable";
-import CourseService from "../services/course-service";
 
 export default class CourseGridTableHeader extends React.Component {
 
@@ -65,12 +64,15 @@ export default class CourseGridTableHeader extends React.Component {
                         <Route exact path="/course/grid"
                                render={() => <CourseGrid
                                    selectCourse={this.props.selectCourse}
+                                   deleteCourse={this.props.deleteCourse}
+                                   selectedCourse = {this.props.selectedCourse}
                                    courses={this.props.courses}/>} />
 
                         <Route exact path="/course/table"
                                render={() => <CourseTable
                                    selectCourse={this.props.selectCourse}
                                    deleteCourse={this.props.deleteCourse}
+                                   selectedCourse = {this.props.selectedCourse}
                                    courses={this.props.courses}/>}/>
                     </div>
                 </div>

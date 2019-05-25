@@ -1,5 +1,6 @@
 import React from 'react';
 import TopicPillItem from "./TopicPillItem";
+import './LessonTabItem.css';
 
 export default class TopicPills extends React.Component {
 
@@ -42,9 +43,11 @@ export default class TopicPills extends React.Component {
                             &nbsp;&nbsp;
                             <i onClick={this.props.unsetCreateTopic} className="fa fa-times btn-danger" />
                         </span>
+                        &nbsp;
                     </div>
                     :
-                    <button onClick={this.props.setCreateTopic} className="btn btn-primary ">
+
+                    <button onClick={this.props.setCreateTopic} className="btn btn-dark">
                         <i className="fa fa-plus" aria-hidden="true"/>
                     </button>
                 }

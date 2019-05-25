@@ -50,9 +50,10 @@ export default class LessonTabs extends React.Component {
                         <button onClick={this.props.unsetCreateLesson} className="btn btn-danger btn-block">
                             Cancel
                         </button>
+                        &nbsp;
                     </div>
                     :
-                    <button onClick={this.props.setCreateLesson} className="btn btn-primary">
+                    <button onClick={this.props.setCreateLesson} className="btn btn-dark">
                         <i className="fa fa-plus" aria-hidden="true"/>
                     </button>
                 }

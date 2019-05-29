@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseCard from '../components/CourseCard';
+import CourseCard from './CourseCard';
 import '../css/CourseGridCss.css';
 
 const CourseGrid =({courses,selectCourse,selectedCourse, deleteCourse}) =>

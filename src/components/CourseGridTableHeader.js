@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router,Link,Route } from 'react-router-dom';
-import CourseGrid from "../containers/CourseGrid";
-import CourseTable from "../containers/CourseTable";
+import CourseGrid from "./CourseGrid";
+import CourseTable from "./CourseTable";
 
 export default class CourseGridTableHeader extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import CourseRow from '../components/CourseRow';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import CourseRow from './CourseRow';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const CourseTable =({courses,selectCourse, selectedCourse,deleteCourse}) =>
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import './SwitchToggle.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import CourseTable from "../containers/CourseTable";
-import CourseGrid from "../containers/CourseGrid";
+import CourseTable from "./CourseTable";
+import CourseGrid from "./CourseGrid";
 import CourseService from "../services/course-service";
 
 export default class SwitchToggle extends React.Component {

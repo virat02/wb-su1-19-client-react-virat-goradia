@@ -5,12 +5,12 @@ import LessonTabs from './LessonTabs';
 import TopicPills from './TopicPills';
 import CourseService from "../services/course-service";
 
-import widgets from "../reducers/widgets";
+import widgetReducer from "../reducers/widgetReducer";
 import WidgetListContainer from "../containers/WidgetListContainer";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-const store = createStore(widgets);
+const store = createStore(widgetReducer);
 
 export default class CourseEditor extends React.Component {
 
@@ -267,7 +267,9 @@ export default class CourseEditor extends React.Component {
                             unsetCreateLesson = {this.unsetCreateLesson}
                             lessonTitleChanged = {this.lessonTitleChanged}
                             selectLesson = {this.selectLesson}/>
+
                         <br />
+
                         <TopicPills
                             topics={this.state.topics}
                             lesson = {this.state.currentLesson}

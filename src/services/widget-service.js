@@ -1,6 +1,7 @@
 let singleton = null;
 let i = 1;
 let widgets = {};
+let baseURL = "http://localhost:8080";
 
 export default class WidgetService {
     constructor() {
@@ -11,25 +12,29 @@ export default class WidgetService {
     }
 
     //creates a new widget instance and adds it to the collection of widgets
-    createWidget = widget => {
+    createWidget = () => {
 
-        //If encounter the very first course
-        if(widget === null) {
-            widget = {
-                id: i++,
-                title: 'New Widget'
-            }
-        }
-
-        //Append the course to the courses object
-        this.widgets.push(widget);
+        return fetch(baseURL + "/api/widgets",
+            {
+                    body: JSON.stringify(
+                    {
+                        title: "New Heading",
+                        name: "Heading",
+                        type:"Heading",
+                        size: 1,
+                        text: "default, widget, text"
+                        }
+                    ),
+                    headers: { 'Content-Type': 'application/json' },
+                    method: 'POST'
+                })
+            .then(response => response.json());
     };
 
     //retrieves all widget instances as an array of widgets
     findAllWidgets = () =>
-        fetch("http://localhost:8080/api/widgets")
+        fetch(baseURL + "/api/widgets")
             .then(response => response.json());
-        // this.widgets;
 
     //retrieves a widget instance that matches the id parameter
     findWidgetById = widgetId =>

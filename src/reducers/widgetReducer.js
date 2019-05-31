@@ -1,4 +1,4 @@
-const widgetReducer = (state = {widgets:[]}, action) => {
+const widgetReducer = (state = {widgets: []}, action) => {
     switch (action.type) {
         case "CREATE_WIDGET":
         case "FIND_ALL_WIDGETS":

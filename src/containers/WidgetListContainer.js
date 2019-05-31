@@ -16,6 +16,15 @@ const dispatcherToPropertyMapper = dispatch => ({
                    type: 'FIND_ALL_WIDGETS',
                    widgets:widgets
                })
+           ),
+
+   addWidget: () =>
+       widgetService.createWidget()
+           .then( widgets =>
+               dispatch({
+                   type: "CREATE_WIDGET",
+                   widgets: widgets
+               })
            )
 });
 

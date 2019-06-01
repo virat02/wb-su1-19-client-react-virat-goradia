@@ -47,9 +47,21 @@ export default class WidgetService {
     //updates the widget instance whose id matches the id parameter.
     //Updates the instance with values in widget parameter
     updateWidget = (id, newWidget) =>
-        this.widgets.map(
-            currentWidget => currentWidget.id === id ? newWidget : currentWidget
-        );
+        fetch(baseURL + "/api/widgets/"+id,
+            {
+                body: JSON.stringify(
+                    {
+                        order: newWidget.order,
+                        name: newWidget.name,
+                        type:newWidget.type,
+                        text: newWidget.text,
+                        url: newWidget.url
+                    }
+                ),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'PUT'
+            })
+            .then(response => response.json());
 
     //deletes widget instance whose id matches the id parameters
     deleteWidget = id =>

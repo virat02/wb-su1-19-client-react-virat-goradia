@@ -19,23 +19,28 @@ export default class WidgetListComponent extends React.Component {
             case 'Heading':
                 return <HeadingWidget
                             widget={widget}
-                            deleteWidget = {this.props.deleteWidget}/>;
+                            deleteWidget = {this.props.deleteWidget}
+                            updateWidget = {this.props.updateWidget}/>;
             case 'Paragraph':
                 return <ParagraphWidget
                             widget={widget}
-                            deleteWidget = {this.props.deleteWidget}/>;
+                            deleteWidget = {this.props.deleteWidget}
+                            updateWidget = {this.props.updateWidget}/>;
             case 'Image':
                 return <ImageWidget
                             widget={widget}
-                            deleteWidget = {this.props.deleteWidget}/>;
+                            deleteWidget = {this.props.deleteWidget}
+                            updateWidget = {this.props.updateWidget}/>;
             case 'List':
                 return <ListWidget
                             widget={widget}
-                            deleteWidget = {this.props.deleteWidget}/>;
+                            deleteWidget = {this.props.deleteWidget}
+                            updateWidget = {this.props.updateWidget}/>;
             case 'Link':
                 return <LinkWidget
                             widget={widget}
-                            deleteWidget = {this.props.deleteWidget} />
+                            deleteWidget = {this.props.deleteWidget}
+                            updateWidget = {this.props.updateWidget}/>
         }
     };
 

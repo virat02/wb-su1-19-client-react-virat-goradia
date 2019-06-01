@@ -9,7 +9,7 @@ export default class HeadingWidget extends React.Component {
 
         this.state = {
             headingSize : "h1",
-            headingText: this.props.widget.text
+            headingText: "Heading Text"
         };
 
     }
@@ -34,7 +34,8 @@ export default class HeadingWidget extends React.Component {
             <div>
                 <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}/>
+                    deleteWidget = {this.props.deleteWidget}
+                    updateWidget = {this.props.updateWidget}/>
                 <br />
                 <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"

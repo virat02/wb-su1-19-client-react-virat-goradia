@@ -3,6 +3,7 @@ const widgetReducer = (state = {widgets: []}, action) => {
         case "CREATE_WIDGET":
         case "FIND_ALL_WIDGETS":
         case "DELETE_WIDGET":
+        case "UPDATE_WIDGET":
             return {
                 widgets: action.widgets
             };

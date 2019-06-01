@@ -22,7 +22,8 @@ export default class ParagraphWidget extends React.Component {
             <div>
                 <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}/>
+                    deleteWidget = {this.props.deleteWidget}
+                    updateWidget = {this.props.updateWidget}/>
                 <br />
                 <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                           rows="4" cols="50"

@@ -9,8 +9,8 @@ export default class ListWidget extends React.Component {
 
         this.state = {
             listOrderType: "ul",
-            listTextDisplay: this.props.widget.text,
-            listText : (this.props.widget.text).split('\n')
+            listTextDisplay:"Put each\nitem in\na separate row",
+            listText : ["Put each", "item in", "a separate row"]
         }
     }
 
@@ -31,7 +31,8 @@ export default class ListWidget extends React.Component {
             <div>
                 <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}/>
+                    deleteWidget = {this.props.deleteWidget}
+                    updateWidget = {this.props.updateWidget}/>
                 <br />
                 <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                           rows="4" cols="50"

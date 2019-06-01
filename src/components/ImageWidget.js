@@ -8,7 +8,7 @@ export default class ImageWidget extends React.Component {
         super(props);
 
         this.state = {
-            imageUrl: this.props.widget.url
+            imageUrl: "http://lorempixel.com/300/150/"
         };
 
     }
@@ -26,7 +26,8 @@ export default class ImageWidget extends React.Component {
             <div>
                 <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}/>
+                    deleteWidget = {this.props.deleteWidget}
+                    updateWidget = {this.props.updateWidget}/>
                 <br />
                 <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"

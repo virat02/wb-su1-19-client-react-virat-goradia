@@ -34,7 +34,16 @@ const dispatcherToPropertyMapper = dispatch => ({
                type: "DELETE_WIDGET",
                widgets: widgets
            })
-       )
+       ),
+
+   updateWidget: (id, newWidget) =>
+       widgetService.updateWidget(id, newWidget)
+           .then( widgets =>
+               dispatch({
+                   type: "UPDATE_WIDGET",
+                   widgets: widgets
+               })
+           )
 });
 
 const WidgetListContainer = connect(stateToPropertyMapper, dispatcherToPropertyMapper)(WidgetListComponent);

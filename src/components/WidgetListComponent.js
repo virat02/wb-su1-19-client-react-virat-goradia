@@ -17,9 +17,9 @@ export default class WidgetListComponent extends React.Component {
 
         switch (widget.type) {
             case 'Heading':
-                return <HeadingWidget widget={widget} />;
+                return <HeadingWidget widget={widget} deleteWidget = {this.props.deleteWidget}/>;
             case 'Paragraph':
-                return <ParagraphWidget widget={widget} />;
+                return <ParagraphWidget widget={widget} deleteWidget = {this.props.deleteWidget}/>;
             case 'Image':
                 return <ImageWidget widget={widget} />;
             case 'List':
@@ -52,9 +52,9 @@ export default class WidgetListComponent extends React.Component {
                 <ul className="list-group">
                     {this.props.widgets.map(
                         (widget,index) =>
-                        <li key={index} className="list-group-item">
-                            {this.renderWidget(widget)}
-                        </li>
+                            <li key={index} className="list-group-item">
+                                {this.renderWidget(widget)}
+                            </li>
                     )}
                 </ul>
 

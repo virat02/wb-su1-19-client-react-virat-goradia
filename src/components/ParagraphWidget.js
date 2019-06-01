@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/WidgetCss.css";
+import WidgetHeaderComponent from "./WidgetHeaderComponent";
 
 export default class ParagraphWidget extends React.Component {
 
@@ -10,15 +11,19 @@ export default class ParagraphWidget extends React.Component {
     render() {
         return (
             <div>
-                <h1>{this.props.widget.type} widget</h1>
+                <WidgetHeaderComponent
+                    widget={this.props.widget}
+                    deleteWidget = {this.props.deleteWidget}/>
+                <br />
+                <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                          rows="4" cols="50"
+                          defaultValue={this.props.widget.text}>
+                </textarea>
 
                 <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px"
-                       defaultValue={this.props.widget.text}/>
+                       height="10px" placeholder="Widget Name"/>
 
-                <input  className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                        height="10px"
-                        defaultValue={this.props.widget.size}/>
+                 <h3> Preview </h3>
 
             </div>
         );

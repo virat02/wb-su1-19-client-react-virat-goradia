@@ -1,7 +1,9 @@
 let singleton = null;
-let i = 1;
+let i = 2;
 let widgets = {};
 let baseURL = "http://localhost:8080";
+
+let currentLength = 1;
 
 export default class WidgetService {
     constructor() {
@@ -12,13 +14,14 @@ export default class WidgetService {
     }
 
     //creates a new widget instance and adds it to the collection of widgets
-    createWidget = () => {
-
-        return fetch(baseURL + "/api/widgets",
+    createWidget = () =>
+        fetch(baseURL + "/api/widgets",
             {
                     body: JSON.stringify(
                     {
+                        id: i++,
                         title: "New Heading",
+                        order: currentLength++,
                         name: "Heading",
                         type:"Heading",
                         size: 1,
@@ -29,7 +32,6 @@ export default class WidgetService {
                     method: 'POST'
                 })
             .then(response => response.json());
-    };
 
     //retrieves all widget instances as an array of widgets
     findAllWidgets = () =>
@@ -50,8 +52,12 @@ export default class WidgetService {
         );
 
     //deletes widget instance whose id matches the id parameters
-    deleteWidget = deleteWidget =>
-        this.widgets = this.widgets.filter(
-            widget => widget.id !== deleteWidget.id
-        );
+    deleteWidget = id =>
+        fetch(baseURL + "/api/widgets/" + id,
+            {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'DELETE'
+            })
+            .then(response => response.json());
+
 }

@@ -8,7 +8,8 @@ export default class HeadingWidget extends React.Component {
         super(props);
 
         this.state = {
-            headingSize : "h1"
+            headingSize : "h1",
+            headingText: this.props.widget.text
         };
 
     }
@@ -20,17 +21,25 @@ export default class HeadingWidget extends React.Component {
         })
     };
 
+    headingTextChanged = event => {
+
+        this.setState( {
+            headingText: event.target.value
+        })
+    };
+
     render() {
+
         return (
             <div>
                 <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}
-                    headingSize = {this.state.headingSize}/>
+                    deleteWidget = {this.props.deleteWidget}/>
                 <br />
                 <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
-                       defaultValue={this.props.widget.text}/>
+                       value={this.state.headingText}
+                       onChange={this.headingTextChanged}/>
 
                 <input  className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                         height="10px"
@@ -46,6 +55,21 @@ export default class HeadingWidget extends React.Component {
                 </select>
 
                 <h3> Preview </h3>
+
+                {
+                    this.state.headingSize === "h1" &&
+                    <h1>{this.state.headingText}</h1>
+                }
+
+                {
+                    this.state.headingSize === "h2" &&
+                    <h2>{this.state.headingText}</h2>
+                }
+
+                {
+                    this.state.headingSize === "h3" &&
+                    <h3>{this.state.headingText}</h3>
+                }
 
             </div>
         );

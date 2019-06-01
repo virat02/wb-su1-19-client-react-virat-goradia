@@ -36,7 +36,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}/>;
-            case 'YouTube':
+            case 'Link':
                 return <LinkWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}

@@ -24,7 +24,6 @@ export default class WidgetHeaderComponent extends React.Component {
 
     };
 
-
     render() {
 
         return (
@@ -45,7 +44,7 @@ export default class WidgetHeaderComponent extends React.Component {
                             onChange={this.changeWidgetType}
                             value={this.state.widget.type}>
                         <option value = "Heading">Heading</option>
-                        <option value = "Link">Link</option>
+                        <option value = "YouTube">Link</option>
                         <option value = "Paragraph">Paragraph</option>
                         <option value = "Image">Image</option>
                         <option value="List">List</option>

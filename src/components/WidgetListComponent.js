@@ -1,5 +1,10 @@
 import React from 'react'
 import "../css/WidgetListComponentCss.css";
+import HeadingWidget from "./HeadingWidget";
+import ParagraphWidget from "./ParagraphWidget";
+import ImageWidget from "./ImageWidget";
+import ListWidget from "./ListWidget";
+import LinkWidget from "./LinkWidget";
 
 export default class WidgetListComponent extends React.Component {
 
@@ -7,6 +12,22 @@ export default class WidgetListComponent extends React.Component {
         super(props);
         this.props.findAllWidgets();
     }
+
+    renderWidget = widget => {
+
+        switch (widget.type) {
+            case 'Heading':
+                return <HeadingWidget widget={widget} />;
+            case 'Paragraph':
+                return <ParagraphWidget widget={widget} />;
+            case 'Image':
+                return <ImageWidget widget={widget} />;
+            case 'List':
+                return <ListWidget widget={widget} />;
+            case 'Link':
+                return <LinkWidget widget={widget} />
+        }
+    };
 
     render() {
         return(
@@ -28,12 +49,14 @@ export default class WidgetListComponent extends React.Component {
 
                 <br />
 
-                {this.props.widgets.map(
-                    (widget,index) =>
-                    <li key={index} className="list-group-item">
-                        {widget.name}
-                    </li>
-                )}
+                <ul className="list-group">
+                    {this.props.widgets.map(
+                        (widget,index) =>
+                        <li key={index} className="list-group-item">
+                            {this.renderWidget(widget)}
+                        </li>
+                    )}
+                </ul>
 
                 <br />
 

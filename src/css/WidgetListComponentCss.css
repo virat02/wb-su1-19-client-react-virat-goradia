@@ -1,4 +1,9 @@
 .wbdv-right-align{
-    display: flex;
-    justify-content: flex-end;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.wbdv-left-align{
+    display: flex !important;
+    justify-content: flex-start !important;
 }

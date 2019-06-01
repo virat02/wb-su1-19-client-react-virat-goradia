@@ -25,7 +25,7 @@ export default class WidgetService {
                         name: "Heading",
                         type:"Heading",
                         size: 1,
-                        text: "default, widget, text"
+                        text: "Heading Text"
                         }
                     ),
                     headers: { 'Content-Type': 'application/json' },

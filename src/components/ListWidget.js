@@ -27,8 +27,6 @@ export default class ListWidget extends React.Component {
 
     render() {
 
-        console.log(this.state.listText);
-
         return (
             <div>
                 <WidgetHeaderComponent

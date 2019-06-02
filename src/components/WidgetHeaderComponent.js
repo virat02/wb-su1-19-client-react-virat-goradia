@@ -15,6 +15,32 @@ export default class WidgetHeaderComponent extends React.Component {
 
         let widget = {...this.state.widget};
         widget.type = event.target.value;
+        widget.name = event.target.value;
+
+        if(widget.type === "Image"){
+            widget.url = "http://lorempixel.com/300/150/";
+            widget.text = null;
+        }
+
+        else if(widget.type === "Heading"){
+            widget.url = null;
+            widget.text = "Heading Text";
+        }
+
+        else if(widget.type === "Paragraph"){
+            widget.url = null;
+            widget.text = "Lorem ipsum";
+        }
+
+        else if(widget.type === "Link"){
+            widget.url = "https://www.youtube.com/user/jannunzi";
+            widget.text = "Link Text";
+        }
+
+        else if(widget.type === "List"){
+            widget.url = null;
+            widget.text = "Put each\nitem in\na separate row";
+        }
 
         this.setState({
             widget: widget
@@ -32,11 +58,13 @@ export default class WidgetHeaderComponent extends React.Component {
 
                 <div className='wbdv-widget-edit-panel form-inline float-right'>
 
-                    <button className='btn btn-warning wbdv-widget-up-btn'>
+                    <button onClick={() => this.props.moveUp(this.state.widget)}
+                            className='btn btn-warning wbdv-widget-up-btn'>
                         <i className='fa fa-arrow-up'/>
                     </button>
                     &nbsp;
-                    <button className='btn btn-warning wbdv-widget-down-btn'>
+                    <button onClick={() => this.props.moveDown(this.state.widget)}
+                            className='btn btn-warning wbdv-widget-down-btn'>
                         <i className='fa fa-arrow-down'/>
                     </button>
                     &nbsp;

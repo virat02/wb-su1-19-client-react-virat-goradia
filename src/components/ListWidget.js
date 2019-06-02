@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/WidgetCss.css";
 import WidgetHeaderComponent from "./WidgetHeaderComponent";
+import HeadingWidget from "./HeadingWidget";
 
 export default class ListWidget extends React.Component {
 
@@ -9,8 +10,8 @@ export default class ListWidget extends React.Component {
 
         this.state = {
             listOrderType: "ul",
-            listTextDisplay:"Put each\nitem in\na separate row",
-            listText : ["Put each", "item in", "a separate row"]
+            listTextDisplay: this.props.widget.text,
+            listText : this.props.widget.text.split("\n")
         }
     }
 
@@ -32,7 +33,9 @@ export default class ListWidget extends React.Component {
                 <WidgetHeaderComponent
                     widget={this.props.widget}
                     deleteWidget = {this.props.deleteWidget}
-                    updateWidget = {this.props.updateWidget}/>
+                    updateWidget = {this.props.updateWidget}
+                    moveUp = {this.props.moveUp}
+                    moveDown = {this.props.moveDown}/>
                 <br />
                 <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                           rows="4" cols="50"

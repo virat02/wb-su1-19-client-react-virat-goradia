@@ -20,27 +20,37 @@ export default class WidgetListComponent extends React.Component {
                 return <HeadingWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
-                            updateWidget = {this.props.updateWidget}/>;
+                            updateWidget = {this.props.updateWidget}
+                            moveUp = {this.props.moveUp}
+                            moveDown = {this.props.moveDown}/>;
             case 'Paragraph':
                 return <ParagraphWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
-                            updateWidget = {this.props.updateWidget}/>;
+                            updateWidget = {this.props.updateWidget}
+                            moveUp = {this.props.moveUp}
+                            moveDown = {this.props.moveDown}/>;
             case 'Image':
                 return <ImageWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
-                            updateWidget = {this.props.updateWidget}/>;
+                            updateWidget = {this.props.updateWidget}
+                            moveUp = {this.props.moveUp}
+                            moveDown = {this.props.moveDown}/>;
             case 'List':
                 return <ListWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
-                            updateWidget = {this.props.updateWidget}/>;
+                            updateWidget = {this.props.updateWidget}
+                            moveUp = {this.props.moveUp}
+                            moveDown = {this.props.moveDown}/>;
             case 'Link':
                 return <LinkWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
-                            updateWidget = {this.props.updateWidget}/>
+                            updateWidget = {this.props.updateWidget}
+                            moveUp = {this.props.moveUp}
+                            moveDown = {this.props.moveDown}/>
         }
     };
 
@@ -66,8 +76,8 @@ export default class WidgetListComponent extends React.Component {
 
                 <ul className="list-group">
                     {this.props.widgets.map(
-                        (widget,index) =>
-                            <li key={index} className="list-group-item">
+                        widget =>
+                            <li key={widget.order} className="list-group-item">
                                 {this.renderWidget(widget)}
                             </li>
                     )}

@@ -35,7 +35,9 @@ export default class HeadingWidget extends React.Component {
                 <WidgetHeaderComponent
                     widget={this.props.widget}
                     deleteWidget = {this.props.deleteWidget}
-                    updateWidget = {this.props.updateWidget}/>
+                    updateWidget = {this.props.updateWidget}
+                    moveUp = {this.props.moveUp}
+                    moveDown = {this.props.moveDown}/>
                 <br />
                 <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"

@@ -43,7 +43,20 @@ const dispatcherToPropertyMapper = dispatch => ({
                    type: "UPDATE_WIDGET",
                    widgets: widgets
                })
-           )
+           ),
+
+   moveUp: widget =>
+       dispatch({
+           type: "MOVE_UP",
+           widget: widget
+       }),
+
+   moveDown: widget =>
+       dispatch({
+           type: "MOVE_DOWN",
+           widget: widget
+       })
+
 });
 
 const WidgetListContainer = connect(stateToPropertyMapper, dispatcherToPropertyMapper)(WidgetListComponent);

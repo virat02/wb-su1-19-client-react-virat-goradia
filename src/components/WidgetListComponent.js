@@ -22,35 +22,40 @@ export default class WidgetListComponent extends React.Component {
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
                             moveUp = {this.props.moveUp}
-                            moveDown = {this.props.moveDown}/>;
+                            moveDown = {this.props.moveDown}
+                            isPreview = {this.props.isPreview}/>;
             case 'Paragraph':
                 return <ParagraphWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
                             moveUp = {this.props.moveUp}
-                            moveDown = {this.props.moveDown}/>;
+                            moveDown = {this.props.moveDown}
+                            isPreview = {this.props.isPreview}/>;
             case 'Image':
                 return <ImageWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
                             moveUp = {this.props.moveUp}
-                            moveDown = {this.props.moveDown}/>;
+                            moveDown = {this.props.moveDown}
+                            isPreview = {this.props.isPreview}/>;
             case 'List':
                 return <ListWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
                             moveUp = {this.props.moveUp}
-                            moveDown = {this.props.moveDown}/>;
+                            moveDown = {this.props.moveDown}
+                            isPreview = {this.props.isPreview}/>;
             case 'Link':
                 return <LinkWidget
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
                             moveUp = {this.props.moveUp}
-                            moveDown = {this.props.moveDown}/>
+                            moveDown = {this.props.moveDown}
+                            isPreview = {this.props.isPreview}/>
         }
     };
 
@@ -65,7 +70,7 @@ export default class WidgetListComponent extends React.Component {
                     <label className="wbdv-preview-label"><b>Preview</b> &nbsp;
                         <label className="switch">
                             <input type="checkbox"
-                                   onClick={this.props.previewWidget}
+                                   onClick={this.props.togglePreviewMode}
                                    checked={this.props.preview}/>
                             <span className="slider round"/>
                         </label>

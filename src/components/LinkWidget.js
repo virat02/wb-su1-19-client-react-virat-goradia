@@ -1,7 +1,6 @@
 import React from 'react'
 import "../css/WidgetCss.css";
 import WidgetHeaderComponent from "./WidgetHeaderComponent";
-import HeadingWidget from "./HeadingWidget";
 
 export default class LinkWidget extends React.Component {
 
@@ -33,28 +32,42 @@ export default class LinkWidget extends React.Component {
 
         return (
             <div>
-                <WidgetHeaderComponent
+                {   !this.props.isPreview &&
+                    <WidgetHeaderComponent
                     widget={this.props.widget}
                     deleteWidget = {this.props.deleteWidget}
                     updateWidget = {this.props.updateWidget}
                     moveUp = {this.props.moveUp}
                     moveDown = {this.props.moveDown}/>
-                <br />
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                }
+
+                { !this.props.isPreview && <br /> }
+
+                {   !this.props.isPreview &&
+                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
                        value={this.state.linkUrl}
                        onChange={this.changeLinkUrl}/>
-                <br />
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                }
+
+                { !this.props.isPreview && <br /> }
+
+                {   !this.props.isPreview &&
+                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
                        value={this.state.linkText}
                        onChange={this.changeLinkText}/>
-                <br />
+                }
 
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                { !this.props.isPreview && <br /> }
+
+                {   !this.props.isPreview &&
+                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px" placeholder="Widget Name"/>
+                }
 
-                <h3> Preview </h3>
+                { !this.props.isPreview && <h3> Preview </h3> }
+
                 <div>
                     {
                         <a href={this.state.linkUrl}>{this.state.linkText}</a>

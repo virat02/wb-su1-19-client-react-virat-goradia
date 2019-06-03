@@ -1,7 +1,6 @@
 import React from 'react'
 import "../css/WidgetCss.css";
 import WidgetHeaderComponent from "./WidgetHeaderComponent";
-import HeadingWidget from "./HeadingWidget";
 
 export default class ListWidget extends React.Component {
 
@@ -30,31 +29,43 @@ export default class ListWidget extends React.Component {
 
         return (
             <div>
-                <WidgetHeaderComponent
+                {   !this.props.isPreview &&
+                    <WidgetHeaderComponent
                     widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}
-                    updateWidget = {this.props.updateWidget}
-                    moveUp = {this.props.moveUp}
-                    moveDown = {this.props.moveDown}/>
-                <br />
-                <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                          rows="4" cols="50"
-                          value={this.state.listTextDisplay}
-                          onChange={this.listTextChanged}>
-                </textarea>
+                    deleteWidget={this.props.deleteWidget}
+                    updateWidget={this.props.updateWidget}
+                    moveUp={this.props.moveUp}
+                    moveDown={this.props.moveDown}/>
+                }
 
-                <select
-                    className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                    onChange = {this.changeListOrder}
-                    value={this.state.listOrderType}>
-                    <option value="ul">Unordered list</option>
-                    <option value="ol">Ordered list</option>
-                </select>
+                { !this.props.isPreview && <br /> }
 
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px" placeholder="Widget Name"/>
 
-                <h3> Preview </h3>
+                {   !this.props.isPreview &&
+                    <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                              rows="4" cols="50"
+                              value={this.state.listTextDisplay}
+                              onChange={this.listTextChanged}>
+                    </textarea>
+                }
+
+                {   !this.props.isPreview &&
+                    <select
+                        className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                        onChange={this.changeListOrder}
+                        value={this.state.listOrderType}>
+                        <option value="ul">Unordered list</option>
+                        <option value="ol">Ordered list</option>
+                    </select>
+                }
+
+
+                {   !this.props.isPreview &&
+                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                           height="10px" placeholder="Widget Name"/>
+                }
+
+                { !this.props.isPreview && <h3> Preview </h3> }
 
                 <div>
                     {

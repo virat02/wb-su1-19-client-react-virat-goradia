@@ -1,6 +1,6 @@
 import 'array.prototype.move';
 
-const widgetReducer = (state = {widgets: []}, action) => {
+const widgetReducer = (state = {widgets: [], isPreview: false}, action) => {
     switch (action.type) {
         case "CREATE_WIDGET":
         case "FIND_ALL_WIDGETS":
@@ -36,6 +36,13 @@ const widgetReducer = (state = {widgets: []}, action) => {
             return Object.assign({} ,{
                 widgets:state.widgets.splice(0)
             });
+
+        case "TOGGLE_PREVIEW_MODE":
+
+            return {
+                isPreview: !state.isPreview,
+                widgets: state.widgets
+            };
 
         default:
             return state;

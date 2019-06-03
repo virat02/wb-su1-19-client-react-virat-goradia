@@ -5,7 +5,8 @@ import WidgetService from "../services/widget-service";
 const widgetService = new WidgetService();
 
 const stateToPropertyMapper = state => ({
-    widgets: state.widgets
+    widgets: state.widgets,
+    isPreview: state.isPreview
 });
 
 const dispatcherToPropertyMapper = dispatch => ({
@@ -55,6 +56,11 @@ const dispatcherToPropertyMapper = dispatch => ({
        dispatch({
            type: "MOVE_DOWN",
            widget: widget
+       }),
+
+    togglePreviewMode: () =>
+       dispatch({
+           type: "TOGGLE_PREVIEW_MODE",
        })
 
 });

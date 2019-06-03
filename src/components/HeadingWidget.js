@@ -11,7 +11,6 @@ export default class HeadingWidget extends React.Component {
             headingSize : "h1",
             headingText: "Heading Text"
         };
-
     }
 
     changeHeadingSize = event => {
@@ -32,31 +31,42 @@ export default class HeadingWidget extends React.Component {
 
         return (
             <div>
-                <WidgetHeaderComponent
-                    widget={this.props.widget}
-                    deleteWidget = {this.props.deleteWidget}
-                    updateWidget = {this.props.updateWidget}
-                    moveUp = {this.props.moveUp}
-                    moveDown = {this.props.moveDown}/>
-                <br />
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px"
-                       value={this.state.headingText}
-                       onChange={this.headingTextChanged}/>
+                { !this.props.isPreview &&
+                    <WidgetHeaderComponent
+                        widget={this.props.widget}
+                        deleteWidget={this.props.deleteWidget}
+                        updateWidget={this.props.updateWidget}
+                        moveUp={this.props.moveUp}
+                        moveDown={this.props.moveDown}/>
+                }
 
-                <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px" placeholder="Widget Name"/>
+                { !this.props.isPreview && <br/> }
 
-                <select
-                    className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                    onChange = {this.changeHeadingSize}
-                    value={this.state.headingSize}>
-                    <option value="h1">Heading 1</option>
-                    <option value="h2">Heading 2</option>
-                    <option value="h3">Heading 3</option>
-                </select>
+                {   !this.props.isPreview &&
+                    < input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                    height="10px"
+                    value={this.state.headingText}
+                    onChange={this.headingTextChanged}/>
+                }
 
-                <h3> Preview </h3>
+                {   !this.props.isPreview &&
+                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                        height="10px" placeholder="Widget Name"/>
+                }
+
+                {   !this.props.isPreview &&
+                    <select
+                        className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                        onChange = {this.changeHeadingSize}
+                        value={this.state.headingSize}>
+                        <option value="h1">Heading 1</option>
+                        <option value="h2">Heading 2</option>
+                        <option value="h3">Heading 3</option>
+                    </select>
+                }
+
+                { !this.props.isPreview && <h3> Preview </h3> }
+
                 <div>
                     {
                         this.state.headingSize === "h1" &&

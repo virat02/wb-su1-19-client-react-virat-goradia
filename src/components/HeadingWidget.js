@@ -9,7 +9,7 @@ export default class HeadingWidget extends React.Component {
 
         this.state = {
             headingSize : "h1",
-            headingText: "Heading Text"
+            widget: this.props.widget
         };
     }
 
@@ -22,8 +22,11 @@ export default class HeadingWidget extends React.Component {
 
     headingTextChanged = event => {
 
+        let widget = {...this.state.widget};
+        widget.text = event.target.value;
+
         this.setState( {
-            headingText: event.target.value
+            widget: widget
         })
     };
 
@@ -33,9 +36,10 @@ export default class HeadingWidget extends React.Component {
             <div>
                 { !this.props.isPreview &&
                     <WidgetHeaderComponent
-                        widget={this.props.widget}
+                        widget={this.state.widget}
                         deleteWidget={this.props.deleteWidget}
                         updateWidget={this.props.updateWidget}
+                        changeType={this.props.changeType}
                         moveUp={this.props.moveUp}
                         moveDown={this.props.moveDown}/>
                 }
@@ -45,7 +49,7 @@ export default class HeadingWidget extends React.Component {
                 {   !this.props.isPreview &&
                     < input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                     height="10px"
-                    value={this.state.headingText}
+                    value={this.state.widget.text}
                     onChange={this.headingTextChanged}/>
                 }
 
@@ -70,17 +74,17 @@ export default class HeadingWidget extends React.Component {
                 <div>
                     {
                         this.state.headingSize === "h1" &&
-                        <h1>{this.state.headingText}</h1>
+                        <h1>{this.state.widget.text}</h1>
                     }
 
                     {
                         this.state.headingSize === "h2" &&
-                        <h2>{this.state.headingText}</h2>
+                        <h2>{this.state.widget.text}</h2>
                     }
 
                     {
                         this.state.headingSize === "h3" &&
-                        <h3>{this.state.headingText}</h3>
+                        <h3>{this.state.widget.text}</h3>
                     }
                 </div>
 

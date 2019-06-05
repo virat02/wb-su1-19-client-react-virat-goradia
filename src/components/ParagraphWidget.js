@@ -8,23 +8,29 @@ export default class ParagraphWidget extends React.Component {
         super(props);
 
         this.state = {
-            paragraphText : this.props.widget.text
+            widget : this.props.widget
         }
     }
 
-    paragraphTextChanged = event =>
-        this.setState( {
-            paragraphText : event.target.value
+    paragraphTextChanged = event => {
+        let widget = {...this.state.widget};
+        widget.text = event.target.value;
+
+        this.setState({
+            widget: widget
         });
+    };
 
     render() {
+
         return (
             <div>
                 {   !this.props.isPreview &&
                     <WidgetHeaderComponent
-                        widget={this.props.widget}
+                        widget={this.state.widget}
                         deleteWidget={this.props.deleteWidget}
                         updateWidget={this.props.updateWidget}
+                        changeType={this.props.changeType}
                         moveUp={this.props.moveUp}
                         moveDown={this.props.moveDown}/>
                 }
@@ -34,7 +40,7 @@ export default class ParagraphWidget extends React.Component {
                 {   !this.props.isPreview &&
                     <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                               rows="4" cols="50"
-                              value={this.state.paragraphText}
+                              value={this.state.widget.text}
                               onChange={this.paragraphTextChanged}>
                     </textarea>
                 }
@@ -47,7 +53,7 @@ export default class ParagraphWidget extends React.Component {
                 { !this.props.isPreview && <h3> Preview </h3> }
 
                 <div>
-                    <p> {this.state.paragraphText} </p>
+                    <p> {this.state.widget.text} </p>
                 </div>
 
             </div>

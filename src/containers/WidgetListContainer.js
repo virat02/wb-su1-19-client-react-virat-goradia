@@ -31,18 +31,19 @@ const dispatcherToPropertyMapper = dispatch => ({
    deleteWidget: id =>
        widgetService.deleteWidget(id)
            .then(widgets =>
-           dispatch({
-               type: "DELETE_WIDGET",
-               widgets: widgets
-           })
-       ),
+               dispatch({
+                   type: "DELETE_WIDGET",
+                   widgets: widgets
+               })
+           ),
 
-   updateWidget: (id, newWidget) =>
-       widgetService.updateWidget(id, newWidget)
-           .then( widgets =>
+   updateWidget: newWidget =>
+       widgetService.updateWidget(newWidget.id, newWidget)
+           .then(widgets =>
                dispatch({
                    type: "UPDATE_WIDGET",
-                   widgets: widgets
+                   widgets: widgets,
+                   widgetType: newWidget.type
                })
            ),
 
@@ -58,9 +59,15 @@ const dispatcherToPropertyMapper = dispatch => ({
            widget: widget
        }),
 
-    togglePreviewMode: () =>
+   togglePreviewMode: () =>
+      dispatch({
+          type: "TOGGLE_PREVIEW_MODE",
+      }),
+
+   changeType: widget =>
        dispatch({
-           type: "TOGGLE_PREVIEW_MODE",
+           type: "CHANGE_WIDGET_TYPE",
+           widget: widget
        })
 
 });

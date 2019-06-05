@@ -9,6 +9,7 @@ export default class ListWidget extends React.Component {
 
         this.state = {
             listOrderType: "ul",
+            widget: this.props.widget,
             listTextDisplay: this.props.widget.text,
             listText : this.props.widget.text.split("\n")
         }
@@ -19,11 +20,17 @@ export default class ListWidget extends React.Component {
             listOrderType: event.target.value
         });
 
-    listTextChanged = event =>
+    listTextChanged = event =>{
+
+        let widget = {...this.state.widget};
+        widget.text = (event.target.value).split('\n');
+
         this.setState( {
             listTextDisplay: event.target.value,
             listText : (event.target.value).split('\n')
         });
+    };
+
 
     render() {
 
@@ -31,9 +38,10 @@ export default class ListWidget extends React.Component {
             <div>
                 {   !this.props.isPreview &&
                     <WidgetHeaderComponent
-                    widget={this.props.widget}
+                    widget={this.state.widget}
                     deleteWidget={this.props.deleteWidget}
                     updateWidget={this.props.updateWidget}
+                    changeType={this.props.changeType}
                     moveUp={this.props.moveUp}
                     moveDown={this.props.moveDown}/>
                 }

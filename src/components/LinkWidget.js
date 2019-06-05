@@ -8,23 +8,28 @@ export default class LinkWidget extends React.Component {
         super(props);
 
         this.state = {
-            linkUrl : "https://www.youtube.com/user/jannunzi",
-            linkText: "Link Text"
+            widget: this.props.widget
         };
 
     }
 
     changeLinkUrl = event => {
 
+        let widget = {...this.state.widget};
+        widget.url = event.target.value;
+
         this.setState({
-            linkUrl: event.target.value
+            widget: widget
         })
     };
 
     changeLinkText = event => {
 
-        this.setState( {
-            linkText: event.target.value
+        let widget = {...this.state.widget};
+        widget.text = event.target.value;
+
+        this.setState({
+            widget: widget
         })
     };
 
@@ -34,9 +39,10 @@ export default class LinkWidget extends React.Component {
             <div>
                 {   !this.props.isPreview &&
                     <WidgetHeaderComponent
-                    widget={this.props.widget}
+                    widget={this.state.widget}
                     deleteWidget = {this.props.deleteWidget}
                     updateWidget = {this.props.updateWidget}
+                    changeType={this.props.changeType}
                     moveUp = {this.props.moveUp}
                     moveDown = {this.props.moveDown}/>
                 }
@@ -46,7 +52,7 @@ export default class LinkWidget extends React.Component {
                 {   !this.props.isPreview &&
                     <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
-                       value={this.state.linkUrl}
+                       value={this.state.widget.url}
                        onChange={this.changeLinkUrl}/>
                 }
 
@@ -55,7 +61,7 @@ export default class LinkWidget extends React.Component {
                 {   !this.props.isPreview &&
                     <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
-                       value={this.state.linkText}
+                       value={this.state.widget.text}
                        onChange={this.changeLinkText}/>
                 }
 
@@ -70,7 +76,7 @@ export default class LinkWidget extends React.Component {
 
                 <div>
                     {
-                        <a href={this.state.linkUrl}>{this.state.linkText}</a>
+                        <a href={this.state.widget.url}>{this.state.widget.text}</a>
                     }
                 </div>
 

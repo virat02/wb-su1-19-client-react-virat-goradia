@@ -21,6 +21,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
+                            changeType = {this.props.changeType}
                             moveUp = {this.props.moveUp}
                             moveDown = {this.props.moveDown}
                             isPreview = {this.props.isPreview}/>;
@@ -29,6 +30,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
+                            changeType = {this.props.changeType}
                             moveUp = {this.props.moveUp}
                             moveDown = {this.props.moveDown}
                             isPreview = {this.props.isPreview}/>;
@@ -37,6 +39,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
+                            changeType = {this.props.changeType}
                             moveUp = {this.props.moveUp}
                             moveDown = {this.props.moveDown}
                             isPreview = {this.props.isPreview}/>;
@@ -45,6 +48,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
+                            changeType = {this.props.changeType}
                             moveUp = {this.props.moveUp}
                             moveDown = {this.props.moveDown}
                             isPreview = {this.props.isPreview}/>;
@@ -53,6 +57,7 @@ export default class WidgetListComponent extends React.Component {
                             widget={widget}
                             deleteWidget = {this.props.deleteWidget}
                             updateWidget = {this.props.updateWidget}
+                            changeType = {this.props.changeType}
                             moveUp = {this.props.moveUp}
                             moveDown = {this.props.moveDown}
                             isPreview = {this.props.isPreview}/>
@@ -64,9 +69,6 @@ export default class WidgetListComponent extends React.Component {
             <div>
 
                 <div className="wbdv-right-align">
-                    <button className='btn btn-success' id='saveWidgetsBtn'
-                            onClick={this.props.saveWidget}>Save
-                    </button>&nbsp; &nbsp;
                     <label className="wbdv-preview-label"><b>Preview</b> &nbsp;
                         <label className="switch">
                             <input type="checkbox"
@@ -82,7 +84,7 @@ export default class WidgetListComponent extends React.Component {
                 <ul className="list-group">
                     {this.props.widgets.map(
                         widget =>
-                            <li key={widget.order} className="list-group-item">
+                            <li key={widget.id} className="list-group-item">
                                 {this.renderWidget(widget)}
                             </li>
                     )}

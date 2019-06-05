@@ -5,9 +5,21 @@ const widgetReducer = (state = {widgets: [], isPreview: false}, action) => {
         case "CREATE_WIDGET":
         case "FIND_ALL_WIDGETS":
         case "DELETE_WIDGET":
-        case "UPDATE_WIDGET":
             return {
                 widgets: action.widgets
+            };
+
+        case "UPDATE_WIDGET":
+
+            alert("Data saved for "+action.widgetType+" widget");
+            return {
+                widgets: action.widgets
+            };
+
+        case "CHANGE_WIDGET_TYPE":
+            return {
+              widgets: state.widgets.map(widget =>
+                  widget.id === action.widget.id ? action.widget : widget)
             };
 
         case "MOVE_UP":

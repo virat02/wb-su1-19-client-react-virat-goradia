@@ -8,15 +8,18 @@ export default class ImageWidget extends React.Component {
         super(props);
 
         this.state = {
-            imageUrl: this.props.widget.url
+            widget: this.props.widget
         };
 
     }
 
     imageUrlChanged = event => {
 
+        let widget = {...this.state.widget};
+        widget.url = event.target.value;
+
         this.setState( {
-            imageUrl: event.target.value
+            widget: widget
         })
     };
 
@@ -26,9 +29,10 @@ export default class ImageWidget extends React.Component {
             <div>
                 { !this.props.isPreview &&
                     <WidgetHeaderComponent
-                    widget={this.props.widget}
+                    widget={this.state.widget}
                     deleteWidget = {this.props.deleteWidget}
                     updateWidget = {this.props.updateWidget}
+                    changeType={this.props.changeType}
                     moveUp = {this.props.moveUp}
                     moveDown = {this.props.moveDown}/>
                 }
@@ -38,7 +42,7 @@ export default class ImageWidget extends React.Component {
                 {   !this.props.isPreview &&
                     <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                        height="10px"
-                       value={this.state.imageUrl}
+                       value={this.state.widget.url}
                        onChange={this.imageUrlChanged}/>
                 }
 
@@ -50,7 +54,7 @@ export default class ImageWidget extends React.Component {
                 { !this.props.isPreview && <h3> Preview </h3> }
 
                 <div>
-                    <img src={this.state.imageUrl} alt="Some random image." />
+                    <img src={this.state.widget.url} alt="Some random image." />
                 </div>
 
             </div>

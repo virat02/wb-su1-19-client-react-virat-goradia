@@ -36,28 +36,25 @@ export default class ListWidget extends React.Component {
 
         return (
             <div>
-                {   !this.props.isPreview &&
+                {!this.props.isPreview &&
+                <div>
                     <WidgetHeaderComponent
-                    widget={this.state.widget}
-                    deleteWidget={this.props.deleteWidget}
-                    updateWidget={this.props.updateWidget}
-                    changeType={this.props.changeType}
-                    moveUp={this.props.moveUp}
-                    moveDown={this.props.moveDown}/>
-                }
+                        widget={this.state.widget}
+                        deleteWidget={this.props.deleteWidget}
+                        updateWidget={this.props.updateWidget}
+                        changeType={this.props.changeType}
+                        moveUp={this.props.moveUp}
+                        moveDown={this.props.moveDown}/>
 
-                { !this.props.isPreview && <br /> }
+                    <br/>
 
 
-                {   !this.props.isPreview &&
                     <textarea className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                               rows="4" cols="50"
                               value={this.state.listTextDisplay}
                               onChange={this.listTextChanged}>
                     </textarea>
-                }
 
-                {   !this.props.isPreview &&
                     <select
                         className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                         onChange={this.changeListOrder}
@@ -65,15 +62,13 @@ export default class ListWidget extends React.Component {
                         <option value="ul">Unordered list</option>
                         <option value="ol">Ordered list</option>
                     </select>
-                }
 
-
-                {   !this.props.isPreview &&
                     <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                            height="10px" placeholder="Widget Name"/>
-                }
 
-                { !this.props.isPreview && <h3> Preview </h3> }
+                    <h3> Preview </h3>
+                </div>
+                }
 
                 <div>
                     {

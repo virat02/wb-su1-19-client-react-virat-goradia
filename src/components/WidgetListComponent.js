@@ -5,6 +5,7 @@ import ParagraphWidget from "./ParagraphWidget";
 import ImageWidget from "./ImageWidget";
 import ListWidget from "./ListWidget";
 import LinkWidget from "./LinkWidget";
+import Switch from 'react-switch';
 
 export default class WidgetListComponent extends React.Component {
 
@@ -70,12 +71,9 @@ export default class WidgetListComponent extends React.Component {
 
                 <div className="wbdv-right-align">
                     <label className="wbdv-preview-label"><b>Preview</b> &nbsp;
-                        <label className="switch">
-                            <input type="checkbox"
-                                   onClick={this.props.togglePreviewMode}
-                                   checked={this.props.preview}/>
-                            <span className="slider round"/>
-                        </label>
+                        <Switch onChange={this.props.togglePreviewMode}
+                                checked={this.props.isPreview}
+                                id="toggle-switch"/>
                     </label>
                 </div>
 

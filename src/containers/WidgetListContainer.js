@@ -59,9 +59,9 @@ const dispatcherToPropertyMapper = dispatch => ({
            widget: widget
        }),
 
-   togglePreviewMode: () =>
+   togglePreviewMode: isPreview =>
       dispatch({
-          type: "TOGGLE_PREVIEW_MODE",
+          type: "TOGGLE_PREVIEW_MODE"
       }),
 
    changeType: widget =>

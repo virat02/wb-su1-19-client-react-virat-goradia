@@ -28,30 +28,28 @@ export default class ImageWidget extends React.Component {
         return (
             <div>
                 { !this.props.isPreview &&
-                    <WidgetHeaderComponent
-                    widget={this.state.widget}
-                    deleteWidget = {this.props.deleteWidget}
-                    updateWidget = {this.props.updateWidget}
-                    changeType={this.props.changeType}
-                    moveUp = {this.props.moveUp}
-                    moveDown = {this.props.moveDown}/>
+                    <div>
+                        <WidgetHeaderComponent
+                        widget={this.state.widget}
+                        deleteWidget = {this.props.deleteWidget}
+                        updateWidget = {this.props.updateWidget}
+                        changeType={this.props.changeType}
+                        moveUp = {this.props.moveUp}
+                        moveDown = {this.props.moveDown}/>
+
+                        <br />
+
+                        <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                           height="10px"
+                           value={this.state.widget.url}
+                           onChange={this.imageUrlChanged}/>
+
+                        <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
+                           height="10px" placeholder="Widget Name"/>
+
+                        <h3> Preview </h3>
+                    </div>
                 }
-
-                { !this.props.isPreview && <br /> }
-
-                {   !this.props.isPreview &&
-                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px"
-                       value={this.state.widget.url}
-                       onChange={this.imageUrlChanged}/>
-                }
-
-                {   !this.props.isPreview &&
-                    <input className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
-                       height="10px" placeholder="Widget Name"/>
-                }
-
-                { !this.props.isPreview && <h3> Preview </h3> }
 
                 <div>
                     <img src={this.state.widget.url} alt="Some random image." />

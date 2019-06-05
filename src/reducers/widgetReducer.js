@@ -1,6 +1,8 @@
 import 'array.prototype.move';
 
-const widgetReducer = (state = {widgets: [], isPreview: false}, action) => {
+const widgetReducer = (state = {widgets: [],
+                                isPreview: false},
+                       action) => {
     switch (action.type) {
         case "CREATE_WIDGET":
         case "FIND_ALL_WIDGETS":

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../css/WidgetListComponentCss.css";
+import "../css/WidgetListComponent.css";
 import HeadingWidget from "./HeadingWidget";
 import ParagraphWidget from "./ParagraphWidget";
 import ImageWidget from "./ImageWidget";
@@ -70,7 +70,8 @@ export default class WidgetListComponent extends React.Component {
             <div>
 
                 <div className="wbdv-right-align">
-                    <label className="wbdv-preview-label"><b>Preview</b> &nbsp;
+                    <label className="wbdv-preview-label">
+                        <b>Preview</b> &nbsp;
                         <Switch onChange={this.props.togglePreviewMode}
                                 checked={this.props.isPreview}
                                 id="toggle-switch"/>

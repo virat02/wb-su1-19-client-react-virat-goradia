@@ -1,23 +1,23 @@
 let singleton = null;
 let i = 2;
 let widgets = {};
-let baseURL = "http://localhost:8080";
+//let baseURL = "http://localhost:8080";
+let baseURL = "https://immense-bastion-78527.herokuapp.com";
 
 let order = 2;
 
 export default class WidgetService {
 
     constructor() {
-        if(!singleton){
+        if (!singleton) {
             singleton = this
         }
         this.widgets = widgets;
     }
 
     //creates a new widget instance and adds it to the collection of widgets
-    createWidget = () => {
-
-        return fetch(baseURL + "/api/widgets",
+    createWidget = () =>
+        fetch(baseURL + "/api/widgets",
             {
                 body: JSON.stringify(
                     {
@@ -34,7 +34,6 @@ export default class WidgetService {
                 method: 'POST'
             })
             .then(response => response.json());
-    };
 
     //retrieves all widget instances as an array of widgets
     findAllWidgets = () =>
@@ -59,8 +58,7 @@ export default class WidgetService {
                         type: newWidget.type,
                         text: newWidget.text,
                         url: newWidget.url,
-                        size: newWidget.size,
-                        listType: newWidget.listType
+                        size: newWidget.size
                     }
                 ),
                 headers: {'Content-Type': 'application/json'},
@@ -72,10 +70,8 @@ export default class WidgetService {
     deleteWidget = id =>
         fetch(baseURL + "/api/widgets/" + id,
             {
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 method: 'DELETE'
             })
-            .then(response => {
-                return response.json()
-            });
+            .then(response =>response.json());
 }

@@ -11,7 +11,9 @@ export default class ListWidget extends React.Component {
             widget: this.props.widget,
             listTextDisplay: this.props.widget.text,
             listText : this.props.widget.text.split("\n")
-        }
+        };
+        
+        console.log("PROPS", this.props.widget.text);
     }
 
     changeListOrder = event=> {
@@ -37,6 +39,8 @@ export default class ListWidget extends React.Component {
 
 
     render() {
+
+        console.log(this.state.widget.listType);
 
         return (
             <div>

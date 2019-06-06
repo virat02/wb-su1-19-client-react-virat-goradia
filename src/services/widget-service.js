@@ -59,7 +59,8 @@ export default class WidgetService {
                         type: newWidget.type,
                         text: newWidget.text,
                         url: newWidget.url,
-                        size: newWidget.size
+                        size: newWidget.size,
+                        listType: newWidget.listType
                     }
                 ),
                 headers: {'Content-Type': 'application/json'},

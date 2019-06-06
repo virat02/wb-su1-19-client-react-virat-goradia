@@ -10,42 +10,42 @@ const stateToPropertyMapper = state => ({
 });
 
 const dispatcherToPropertyMapper = dispatch => ({
-   findAllWidgets: () =>
-       widgetService.findAllWidgets()
-           .then(widgets =>
-               dispatch({
-                   type: 'FIND_ALL_WIDGETS',
-                   widgets:widgets
-               })
-           ),
+    findAllWidgets: () =>
+        widgetService.findAllWidgets()
+            .then(widgets =>
+                dispatch({
+                    type: 'FIND_ALL_WIDGETS',
+                    widgets: widgets
+                })
+            ),
 
-   addWidget: () =>
-       widgetService.createWidget()
-           .then( widgets =>
-               dispatch({
-                   type: "CREATE_WIDGET",
-                   widgets: widgets
-               })
-           ),
+    addWidget: () =>
+        widgetService.createWidget()
+            .then(widgets =>
+                dispatch({
+                    type: "CREATE_WIDGET",
+                    widgets: widgets
+                })
+            ),
 
-   deleteWidget: id =>
-       widgetService.deleteWidget(id)
-           .then(widgets =>
-               dispatch({
-                   type: "DELETE_WIDGET",
-                   widgets: widgets
-               })
-           ),
+    deleteWidget: id =>
+        widgetService.deleteWidget(id)
+            .then(widgets =>
+                dispatch({
+                    type: "DELETE_WIDGET",
+                    widgets: widgets
+                })
+            ),
 
-   updateWidget: newWidget =>
-       widgetService.updateWidget(newWidget.id, newWidget)
-           .then(widgets =>
-               dispatch({
-                   type: "UPDATE_WIDGET",
-                   widgets: widgets,
-                   widgetType: newWidget.type
-               })
-           ),
+    updateWidget: newWidget =>
+        widgetService.updateWidget(newWidget.id, newWidget)
+            .then(widgets =>
+                dispatch({
+                    type: "UPDATE_WIDGET",
+                    widgets: widgets,
+                    widgetType: newWidget.type
+                })
+            ),
 
    moveUp: widget =>
        dispatch({
@@ -59,7 +59,7 @@ const dispatcherToPropertyMapper = dispatch => ({
            widget: widget
        }),
 
-   togglePreviewMode: isPreview =>
+   togglePreviewMode: () =>
       dispatch({
           type: "TOGGLE_PREVIEW_MODE"
       }),

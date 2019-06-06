@@ -8,20 +8,23 @@ const widgetReducer = (state = {widgets: [],
         case "FIND_ALL_WIDGETS":
         case "DELETE_WIDGET":
             return {
-                widgets: action.widgets
+                widgets: action.widgets,
+                isPreview: state.isPreview
             };
 
         case "UPDATE_WIDGET":
 
             alert("Data saved for "+action.widgetType+" widget");
             return {
-                widgets: action.widgets
+                widgets: action.widgets,
+                isPreview: state.isPreview
             };
 
         case "CHANGE_WIDGET_TYPE":
             return {
               widgets: state.widgets.map(widget =>
-                  widget.id === action.widget.id ? action.widget : widget)
+                  widget.id === action.widget.id ? action.widget : widget),
+              isPreview: state.isPreview
             };
 
         case "MOVE_UP":
@@ -34,7 +37,8 @@ const widgetReducer = (state = {widgets: [],
                 alert('Cannot move further up!')
             }
             return Object.assign({} ,{
-                widgets:state.widgets.splice(0)
+                widgets:state.widgets.splice(0),
+                isPreview: state.isPreview
             });
 
         case "MOVE_DOWN" :
@@ -48,7 +52,8 @@ const widgetReducer = (state = {widgets: [],
                 alert('Cannot move further down!')
             }
             return Object.assign({} ,{
-                widgets:state.widgets.splice(0)
+                widgets:state.widgets.splice(0),
+                isPreview: state.isPreview
             });
 
         case "TOGGLE_PREVIEW_MODE":

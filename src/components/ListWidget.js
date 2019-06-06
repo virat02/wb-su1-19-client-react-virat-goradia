@@ -8,24 +8,28 @@ export default class ListWidget extends React.Component {
         super(props);
 
         this.state = {
-            listOrderType: "ul",
             widget: this.props.widget,
             listTextDisplay: this.props.widget.text,
             listText : this.props.widget.text.split("\n")
         }
     }
 
-    changeListOrder = event=>
-        this.setState( {
-            listOrderType: event.target.value
+    changeListOrder = event=> {
+        let widget = {...this.state.widget};
+        widget.listType = event.target.value;
+
+        this.setState({
+            widget: widget
         });
+    };
 
     listTextChanged = event =>{
 
         let widget = {...this.state.widget};
-        widget.text = (event.target.value).split('\n');
+        widget.text = event.target.value;
 
         this.setState( {
+            widget: widget,
             listTextDisplay: event.target.value,
             listText : (event.target.value).split('\n')
         });
@@ -58,7 +62,7 @@ export default class ListWidget extends React.Component {
                     <select
                         className="form-control form-control-lg col-lg-12 float-left widgetTextbox"
                         onChange={this.changeListOrder}
-                        value={this.state.listOrderType}>
+                        value={this.state.widget.listType}>
                         <option value="ul">Unordered list</option>
                         <option value="ol">Ordered list</option>
                     </select>
@@ -72,7 +76,7 @@ export default class ListWidget extends React.Component {
 
                 <div>
                     {
-                        this.state.listOrderType === "ul" ?
+                        this.state.widget.listType === "ul" ?
                             <ul> {this.state.listText.map( (line,index) =>
                                 <li key={index}>{line}</li>)} </ul>
                             :

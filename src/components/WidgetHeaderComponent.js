@@ -35,6 +35,7 @@ export default class WidgetHeaderComponent extends React.Component {
         else if(widget.type === "Heading"){
             widget.url = null;
             widget.text = "Heading Text";
+            widget.size = 1;
         }
 
         else if(widget.type === "Paragraph"){
@@ -50,6 +51,7 @@ export default class WidgetHeaderComponent extends React.Component {
         else if(widget.type === "List"){
             widget.url = null;
             widget.text = "Put each\nitem in\na separate row";
+            widget.listType = "ul";
         }
 
         this.setState({

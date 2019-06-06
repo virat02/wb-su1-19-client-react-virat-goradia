@@ -50,7 +50,7 @@ export default class WidgetService {
     //updates the widget instance whose id matches the id parameter.
     //Updates the instance with values in widget parameter
     updateWidget = (id, newWidget) =>
-        fetch(baseURL + "/api/widgets/"+id,
+        fetch(baseURL + "/api/widgets/" + id,
             {
                 body: JSON.stringify(
                     {
@@ -58,10 +58,12 @@ export default class WidgetService {
                         name: newWidget.name,
                         type: newWidget.type,
                         text: newWidget.text,
-                        url: newWidget.url
+                        url: newWidget.url,
+                        size: newWidget.size,
+                        listType: newWidget.listType
                     }
                 ),
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 method: 'PUT'
             })
             .then(response => response.json());

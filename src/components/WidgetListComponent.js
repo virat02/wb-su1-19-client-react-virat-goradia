@@ -66,6 +66,7 @@ export default class WidgetListComponent extends React.Component {
     };
 
     render() {
+
         return(
             <div>
 

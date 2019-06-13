@@ -94,7 +94,7 @@ export default class WidgetListComponent extends React.Component {
 
                 <div className="wbdv-right-align">
                     <i className="fa fa-3x fa-plus-circle wbdv-new-widget"
-                       onClick={this.props.addWidget}/>&nbsp;
+                       onClick={() => this.props.addWidget(topicId)}/>&nbsp;
                 </div>
 
             </div>

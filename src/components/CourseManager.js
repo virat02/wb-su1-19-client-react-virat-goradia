@@ -55,14 +55,10 @@ export default class CourseManager extends React.Component {
             courses: this.state.courses.filter(course => course.id !== id)
         });
 
-    selectCourse = course => {
-
-        console.log("here");
-
+    selectCourse = course =>
         this.setState({
             selectedCourse: course
         });
-    };
 
     render() {
         return (

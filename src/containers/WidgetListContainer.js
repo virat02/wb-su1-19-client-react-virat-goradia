@@ -10,8 +10,8 @@ const stateToPropertyMapper = state => ({
 });
 
 const dispatcherToPropertyMapper = dispatch => ({
-    findAllWidgets: () =>
-        widgetService.findAllWidgets()
+    findAllWidgets: topicId =>
+        widgetService.findAllWidgetsForTopic(topicId)
             .then(widgets =>
                 dispatch({
                     type: 'FIND_ALL_WIDGETS',
@@ -19,14 +19,15 @@ const dispatcherToPropertyMapper = dispatch => ({
                 })
             ),
 
-    addWidget: () =>
-        widgetService.createWidget()
-            .then(widgets =>
-                dispatch({
-                    type: "CREATE_WIDGET",
-                    widgets: widgets
-                })
-            ),
+    addWidget: topicId =>
+        widgetService.createHeadingWidget(topicId)
+            .then(() => widgetService.findAllWidgetsForTopic(topicId)
+                .then(widgets =>
+                    dispatch({
+                        type: "FIND_ALL_WIDGETS",
+                        widgets: widgets
+                    })
+                )),
 
     deleteWidget: id =>
         widgetService.deleteWidget(id)

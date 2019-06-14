@@ -1,6 +1,7 @@
 let singleton = null;
 let topics = {};
-let baseURL = "http://localhost:8080";
+//let baseURL = "http://localhost:8080";
+let baseURL = "https://evening-brook-77037.herokuapp.com";
 
 export default class TopicService {
 

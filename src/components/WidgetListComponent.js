@@ -13,11 +13,12 @@ export default class WidgetListComponent extends React.Component {
         super(props);
     }
 
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        if(this.props !== nextProps) {
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(this.props.topic !== nextProps.topic) {
             this.props.findAllWidgets(nextProps.topic.id);
         }
     }
+
 
     renderWidget = widget => {
 

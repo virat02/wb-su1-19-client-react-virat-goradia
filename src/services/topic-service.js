@@ -44,5 +44,6 @@ export default class TopicService {
     deleteTopic = topicId =>
         fetch(baseURL + "/api/topics/" + topicId, {
             method: 'DELETE'
-        }).then(response => response.json());
+        })
+            //.then(response => response.json());
 }

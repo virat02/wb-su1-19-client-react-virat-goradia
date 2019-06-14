@@ -46,5 +46,6 @@ export default class LessonService {
         fetch(baseURL + "/api/lessons/" + lessonId,
             {
             method: 'DELETE'
-        }).then(response => response.json());
+        })
+            //.then(response => response.json());
 }

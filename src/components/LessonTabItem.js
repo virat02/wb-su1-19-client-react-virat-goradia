@@ -69,7 +69,7 @@ export default class LessonTabItem extends React.Component {
                                 &nbsp;
                                 &nbsp;
                                 <i className="fa fa-times" aria-hidden="true"
-                                   onClick={() => this.props.deleteLesson(this.props.lesson.id)}/>
+                                   onClick={() => this.props.deleteLesson(this.props.lesson.lessonId)}/>
                             </span>
                         </span>
                     </div>

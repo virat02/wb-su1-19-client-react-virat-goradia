@@ -41,10 +41,18 @@ export default class CourseService {
             .then(response => response.json());
 
     //deletes course instance whose id matches the id parameter
+    // deleteCourse = courseId =>
+    //     fetch(baseURL+ "/api/courses/" + courseId,
+    //         {
+    //             headers: {'Content-Type': 'application/json'},
+    //             method: 'DELETE'
+    //         })
+    //         .then(response => response.json());
+
     deleteCourse = courseId =>
-        fetch(baseURL+ "/api/courses" + '/' + courseId,
+        fetch(baseURL + "/api/courses/" + courseId,
             {
+                headers: {'Content-Type': 'application/json'},
                 method: 'DELETE'
             })
-            .then(response => response.json());
 }

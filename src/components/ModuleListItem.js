@@ -62,7 +62,7 @@ export default class ModuleListItem extends React.Component {
                             &nbsp;
                             &nbsp;
                             <i className="fa fa-times" aria-hidden="true"
-                               onClick={() => this.props.deleteModule(this.props.module.id)}/>
+                               onClick={() => this.props.deleteModule(this.props.module.moduleId)}/>
                         </span>
                     </button>
                 </li>

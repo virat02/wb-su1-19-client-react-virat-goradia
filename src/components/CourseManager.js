@@ -7,30 +7,52 @@ import CourseService from "../services/course-service";
 export default class CourseManager extends React.Component {
     constructor(props) {
         super(props);
-        this.courseService = new CourseService();
 
         this.state = {
             selectedCourse: '',
             course: {
-                id: -1,
+                courseId: (new Date()).getTime(),
                 title: "New Course",
-                lessons: [
+                modules: [
                     {
-                        id: -1,
-                        title: "New Lesson",
-                        topics: [
+                        moduleId: (new Date()).getTime(),
+                        title: "New Module",
+                        lessons: [
                             {
-                                id: -1,
-                                title: "New Topic"
+                                lessonId: (new Date()).getTime(),
+                                title: "New Lesson",
+                                topics: [
+                                    {
+                                        id: (new Date()).getTime(),
+                                        title: "New Topic",
+                                        widgets: []
+                                    }
+                                ]
                             }
                         ]
                     }
                 ]
             },
-
-            courses: this.courseService.findAllCourses()
+            courses: []
         }
+    }
 
+    componentDidMount() {
+        this.courseService = new CourseService();
+        this.courseService.findAllCourses()
+            .then( courses =>
+                this.setState({
+                    courses: courses
+                }))
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(this.props !== nextProps) {
+            this.setState({
+                courses: nextProps.courses,
+                selectedCourse: nextProps.selectedCourse
+            })
+        }
     }
 
     courseTitleChanged = (event) =>
@@ -42,18 +64,26 @@ export default class CourseManager extends React.Component {
         });
 
     createCourse = () => {
-        this.setState({
-            courses: [...this.state.courses, this.state.course],
-            course: {
-                title: "New Course"
-            }
-        });
+
+        this.courseService.createCourse(this.state.course)
+            .then(() => {
+                this.courseService.findAllCourses()
+                    .then(courses => this.setState({
+                        courses: courses
+                    }))
+            })
     };
 
-    deleteCourse = id =>
-        this.setState( {
-            courses: this.state.courses.filter(course => course.id !== id)
-        });
+    deleteCourse = id => {
+
+        this.courseService.deleteCourse(id)
+            .then(() => {
+                this.courseService.findAllCourses()
+                    .then(courses => this.setState({
+                        courses: courses
+                    }))
+            })
+    };
 
     selectCourse = course =>
         this.setState({

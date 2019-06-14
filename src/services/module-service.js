@@ -46,5 +46,5 @@ export default class ModuleService {
             {
                 method: 'DELETE'
             })
-            .then(response => response.json());
+            //.then(response => response.json());
 }

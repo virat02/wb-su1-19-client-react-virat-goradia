@@ -9,10 +9,23 @@ export default class CourseGridTableHeader extends React.Component {
         super(props);
 
         this.state = {
-            isTable : false
+            isTable : false,
+            courses: this.props.courses,
+            course: this.props.course,
+            selectedCourse: this.props.selectedCourse
         };
 
         this.changeView = this.changeView.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(this.props !== nextProps) {
+            this.setState({
+                courses: nextProps.courses,
+                course: nextProps.course,
+                selectedCourse: nextProps.selectedCourse
+            })
+        }
     }
 
     changeView = () =>

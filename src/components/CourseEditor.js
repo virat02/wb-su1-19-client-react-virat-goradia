@@ -4,6 +4,9 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import LessonTabs from './LessonTabs';
 import TopicPills from './TopicPills';
 import CourseService from "../services/course-service";
+import ModuleService from "../services/module-service";
+import LessonService from "../services/lesson-service";
+import TopicService from "../services/topic-service";
 
 import widgetReducer from "../reducers/widgetReducer";
 import WidgetListContainer from "../containers/WidgetListContainer";
@@ -20,94 +23,87 @@ export default class CourseEditor extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.courseService = new CourseService();
+        this.moduleService = new ModuleService();
+        this.lessonService = new LessonService();
+        this.topicService = new TopicService();
+
         this.courseId = this.props.match.params.courseId;
-        this.course = this.courseService.findCourseById(this.courseId);
 
         this.state = {
             isCreateLesson: false,
             isCreateModule : false,
             isCreateTopic : false,
-            currentCourse: this.course,
-            currentModule: this.course.modules[0],
-            currentLesson: this.course.modules[0].lessons[0],
-            currentTopic: this.course.modules[0].lessons[0].topics[0],
-            courseId: this.courseId,
+            currentCourse: '',
+            currentModule: '',
+            currentLesson: '',
+            currentTopic: '',
 
             module : {
                 id : (new Date()).getTime(),
                 title: 'New Module',
-                lessons: [{
-                    id: -1,
-                    title: "New Lesson",
-                    topics : [{
-                        id: -1,
-                        title: "New topic"
-                    }]
-                }]
+                lessons: []
             },
 
             lesson : {
-                id : -1,
+                id : (new Date()).getTime(),
                 title : 'New Lesson',
-                topics: [ {
-                    id: -1,
-                    title: 'New Title'
-                }]
+                topics: []
             },
 
             topic : {
-                id: -1,
-                title: 'New Title'
+                id: (new Date()).getTime(),
+                title: 'New Title',
+                widgets: []
             },
 
-            topics: this.course.modules[0].lessons[0].topics,
-            lessons: this.course.modules[0].lessons,
-            modules: this.course.modules
+            topics: [],
+            lessons: [],
+            modules: []
         };
 
     }
 
+    componentDidMount() {
+        this.courseService.findCourseById(this.courseId)
+            .then(course => {
+
+                this.setState({
+                    currentCourse: course,
+                    currentModule: course.modules[0],
+                    modules: course.modules
+                })
+            })
+    };
+
     /**
      *  All methods for a module
      */
-    selectModule = module => {
-
+    selectModule = module =>
         this.setState(
             {
                 currentModule: module,
                 currentLesson: module.lessons[0],
-                currentTopic: module.lessons[0].topics[0],
                 lessons: module.lessons,
-                topics: module.lessons[0].topics
-            }, () => console.log(this.state)
-        );
-    };
+            });
 
     createModule = () => {
 
-        this.state.module.id = (new Date()).getTime();
-
-        this.state.module.lessons = [{
-                id: -1,
-                title: "New Lesson",
-                topics : [{
-                    id: -1,
-                    title: "New topic"
-                }]
-            }];
-
-        this.setState({
-
-            modules: [...this.state.modules, this.state.module ],
-            isCreateModule : false
-        })
+        this.moduleService.createModule(this.courseId, this.state.module)
+            .then(() => this.moduleService.findAllModulesForCourse(this.courseId)
+                .then(modules => this.setState({
+                    modules: modules,
+                    isCreateModule : false
+                })))
     };
 
-    deleteModule = (id) => {
-        this.setState({
-            modules: this.state.modules.filter(module => module.id !== id)
-        })
+    deleteModule = id => {
+        this.moduleService.deleteModule(id)
+            .then(() => this.moduleService.findAllModulesForCourse(this.courseId)
+                .then(modules => this.setState({
+                    modules: modules
+                })))
     };
 
     setCreateModule = () => {
@@ -148,23 +144,21 @@ export default class CourseEditor extends React.Component {
 
     createLesson = () => {
 
-        this.state.lesson.id = (new Date()).getTime();
-        this.state.lesson.topics = [ {
-            id: -1,
-            title : "New Topic"
-        }];
-
-        this.setState({
-            lessons: [...this.state.lessons, this.state.lesson],
-            isCreateLesson : false
-        })
+        this.lessonService.createLesson(this.state.currentModule.moduleId, this.state.lesson)
+            .then(() => this.lessonService.findAllLessonsForModule(this.state.currentModule.moduleId)
+                .then(lessons => this.setState({
+                    lessons: lessons,
+                    isCreateLesson : false
+                })))
     };
 
-    deleteLesson = (id) => {
+    deleteLesson = id => {
 
-        this.setState({
-            lessons : this.state.lessons.filter(lesson => lesson.id !== id)
-        });
+        this.lessonService.deleteLesson(id)
+            .then(() => this.lessonService.findAllLessonsForModule(this.state.currentModule.moduleId)
+                .then(lessons => this.setState({
+                    lessons: lessons
+                })))
     };
 
     setCreateLesson = () => {
@@ -202,18 +196,20 @@ export default class CourseEditor extends React.Component {
 
     createTopic = () => {
 
-        this.state.topic.id = (new Date()).getTime();
-
-        this.setState({
-            topics: [...this.state.topics , this.state.topic],
-            isCreateTopic : false
-        });
+        this.topicService.createTopic(this.state.currentLesson.lessonId, this.state.topic)
+            .then(() => this.topicService.findAllTopicsForLesson(this.state.currentLesson.lessonId)
+                .then(topics => this.setState({
+                    topics: topics,
+                    isCreateTopic : false
+                })))
     };
 
-    deleteTopic = (id) => {
-        this.setState({
-            topics : this.state.topics.filter(topic => topic.id !== id)
-        })
+    deleteTopic = id => {
+        this.topicService.deleteTopic(id)
+            .then(() => this.topicService.findAllTopicsForLesson(this.state.currentLesson.lessonId)
+                .then(topics => this.setState({
+                    topics: topics
+                })))
     };
 
     setCreateTopic = () => {

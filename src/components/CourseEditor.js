@@ -10,14 +10,10 @@ import TopicService from "../services/topic-service";
 
 import widgetReducer from "../reducers/widgetReducer";
 import WidgetListContainer from "../containers/WidgetListContainer";
-import {composeWithDevTools} from 'redux-devtools-extension';
-import {createStore, applyMiddleware} from "redux";
+import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-const store = createStore(widgetReducer, composeWithDevTools (
-    applyMiddleware(),
-    //other store enhancers if any
-));
+const store = createStore(widgetReducer);
 
 export default class CourseEditor extends React.Component {
 

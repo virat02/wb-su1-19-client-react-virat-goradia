@@ -9,69 +9,76 @@ const stateToPropertyMapper = state => ({
     isPreview: state.isPreview
 });
 
-const dispatcherToPropertyMapper = dispatch => ({
-    findAllWidgets: topicId =>
-        widgetService.findAllWidgetsForTopic(topicId)
-            .then(widgets =>
-                dispatch({
-                    type: 'FIND_ALL_WIDGETS',
-                    widgets: widgets
-                })
-            ),
+const dispatcherToPropertyMapper = (dispatch, ownProps) => {
 
-    addWidget: topicId =>
-        widgetService.createHeadingWidget(topicId)
-            .then(() => widgetService.findAllWidgetsForTopic(topicId)
+    return ({
+
+        findAllWidgets: topicId => {
+
+            return widgetService.findAllWidgetsForTopic(topicId)
                 .then(widgets =>
                     dispatch({
-                        type: "FIND_ALL_WIDGETS",
+                        type: 'FIND_ALL_WIDGETS',
                         widgets: widgets
                     })
-                )),
+                )
+        },
 
-    deleteWidget: id =>
-        widgetService.deleteWidget(id)
-            .then(widgets =>
-                dispatch({
-                    type: "DELETE_WIDGET",
-                    widgets: widgets
-                })
-            ),
+        addWidget: () =>
+            widgetService.createHeadingWidget(ownProps.topic.id)
+                .then(() => widgetService.findAllWidgetsForTopic(ownProps.topic.id)
+                    .then(widgets =>
+                        dispatch({
+                            type: "FIND_ALL_WIDGETS",
+                            widgets: widgets
+                        })
+                    )),
 
-    updateWidget: newWidget =>
-        widgetService.updateWidget(newWidget.id, newWidget)
-            .then(widgets =>
-                dispatch({
-                    type: "UPDATE_WIDGET",
-                    widgets: widgets,
-                    widgetType: newWidget.type
-                })
-            ),
+        deleteWidget: id =>
+            widgetService.deleteWidget(id)
+                .then(() => widgetService.findAllWidgetsForTopic(ownProps.topic.id)
+                    .then(widgets =>
+                        dispatch({
+                            type: "DELETE_WIDGET",
+                            widgets: widgets
+                        }))
+                ),
 
-   moveUp: widget =>
-       dispatch({
-           type: "MOVE_UP",
-           widget: widget
-       }),
+        updateWidget: newWidget =>
+            widgetService.updateWidget(newWidget.id, newWidget)
+                .then(widgets =>
+                    dispatch({
+                        type: "UPDATE_WIDGET",
+                        widgets: widgets,
+                        widgetType: newWidget.type
+                    })
+                ),
 
-   moveDown: widget =>
-       dispatch({
-           type: "MOVE_DOWN",
-           widget: widget
-       }),
+        moveUp: widget =>
+            dispatch({
+                type: "MOVE_UP",
+                widget: widget
+            }),
 
-   togglePreviewMode: () =>
-      dispatch({
-          type: "TOGGLE_PREVIEW_MODE"
-      }),
+        moveDown: widget =>
+            dispatch({
+                type: "MOVE_DOWN",
+                widget: widget
+            }),
 
-   changeType: widget =>
-       dispatch({
-           type: "CHANGE_WIDGET_TYPE",
-           widget: widget
-       })
+        togglePreviewMode: () =>
+            dispatch({
+                type: "TOGGLE_PREVIEW_MODE"
+            }),
 
-});
+        changeType: widget =>
+            dispatch({
+                type: "CHANGE_WIDGET_TYPE",
+                widget: widget
+            })
+
+    })
+};
 
 const WidgetListContainer = connect(stateToPropertyMapper, dispatcherToPropertyMapper)(WidgetListComponent);
 

@@ -39,8 +39,8 @@ export default class WidgetService {
     createHeadingWidget = topicId =>
         fetch(baseURL + "/api/topics/" + topicId + "/heading/widget",
             {body: JSON.stringify({
-                    title: "new heading",
-                    type:"HEADING",
+                    name: "Heading",
+                    type:"Heading",
                     size: 1,
                     text: "Heading Text"
                 }),
@@ -82,5 +82,5 @@ export default class WidgetService {
                 headers: {'Content-Type': 'application/json'},
                 method: 'DELETE'
             })
-            .then(response =>response.json());
+            //.then(response =>response.json());
 }

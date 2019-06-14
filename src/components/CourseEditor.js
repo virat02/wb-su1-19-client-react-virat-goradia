@@ -84,7 +84,6 @@ export default class CourseEditor extends React.Component {
         this.setState(
             {
                 currentModule: module,
-                currentLesson: module.lessons[0],
                 lessons: module.lessons,
             });
 
@@ -137,7 +136,6 @@ export default class CourseEditor extends React.Component {
         this.setState(
             {
                 currentLesson: lesson,
-                currentTopic: lesson.topics[0],
                 topics: lesson.topics
             }
         );
@@ -285,9 +283,8 @@ export default class CourseEditor extends React.Component {
                         <br />
 
                         <Provider store={store}>
-                            <WidgetListContainer/>
+                            <WidgetListContainer topic = {this.state.currentTopic}/>
                         </Provider>
-
                     </div>
                 </div>
             </Router>
